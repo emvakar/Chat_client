@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20A119BC21D2BB4D0050656A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A119BB21D2BB4D0050656A /* AppDelegate.swift */; };
+		20A119BE21D2BB4D0050656A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A119BD21D2BB4D0050656A /* ViewController.swift */; };
+		20A119C121D2BB4D0050656A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A119BF21D2BB4D0050656A /* Main.storyboard */; };
+		20A119C321D2BB500050656A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A119C221D2BB500050656A /* Assets.xcassets */; };
+		20A119C621D2BB500050656A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A119C421D2BB500050656A /* LaunchScreen.storyboard */; };
+		20A119D121D2BB500050656A /* Alexo_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A119D021D2BB500050656A /* Alexo_ChatTests.swift */; };
+		20A119DC21D2BB500050656A /* Alexo_ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A119DB21D2BB500050656A /* Alexo_ChatUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20A119CD21D2BB500050656A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20A119B021D2BB4D0050656A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20A119B721D2BB4D0050656A;
+			remoteInfo = "Alexo Chat";
+		};
+		20A119D821D2BB500050656A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20A119B021D2BB4D0050656A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20A119B721D2BB4D0050656A;
+			remoteInfo = "Alexo Chat";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20A119B821D2BB4D0050656A /* Alexo Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alexo Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A119BB21D2BB4D0050656A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20A119BD21D2BB4D0050656A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20A119C021D2BB4D0050656A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20A119C221D2BB500050656A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20A119C521D2BB500050656A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20A119C721D2BB500050656A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20A119CC21D2BB500050656A /* Alexo ChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Alexo ChatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A119D021D2BB500050656A /* Alexo_ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alexo_ChatTests.swift; sourceTree = "<group>"; };
+		20A119D221D2BB500050656A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20A119D721D2BB500050656A /* Alexo ChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Alexo ChatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A119DB21D2BB500050656A /* Alexo_ChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alexo_ChatUITests.swift; sourceTree = "<group>"; };
+		20A119DD21D2BB500050656A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20A119B521D2BB4D0050656A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A119C921D2BB500050656A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A119D421D2BB500050656A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20A119AF21D2BB4D0050656A = {
+			isa = PBXGroup;
+			children = (
+				20A119BA21D2BB4D0050656A /* Alexo Chat */,
+				20A119CF21D2BB500050656A /* Alexo ChatTests */,
+				20A119DA21D2BB500050656A /* Alexo ChatUITests */,
+				20A119B921D2BB4D0050656A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20A119B921D2BB4D0050656A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20A119B821D2BB4D0050656A /* Alexo Chat.app */,
+				20A119CC21D2BB500050656A /* Alexo ChatTests.xctest */,
+				20A119D721D2BB500050656A /* Alexo ChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20A119BA21D2BB4D0050656A /* Alexo Chat */ = {
+			isa = PBXGroup;
+			children = (
+				20A119BB21D2BB4D0050656A /* AppDelegate.swift */,
+				20A119BD21D2BB4D0050656A /* ViewController.swift */,
+				20A119BF21D2BB4D0050656A /* Main.storyboard */,
+				20A119C221D2BB500050656A /* Assets.xcassets */,
+				20A119C421D2BB500050656A /* LaunchScreen.storyboard */,
+				20A119C721D2BB500050656A /* Info.plist */,
+			);
+			path = "Alexo Chat";
+			sourceTree = "<group>";
+		};
+		20A119CF21D2BB500050656A /* Alexo ChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				20A119D021D2BB500050656A /* Alexo_ChatTests.swift */,
+				20A119D221D2BB500050656A /* Info.plist */,
+			);
+			path = "Alexo ChatTests";
+			sourceTree = "<group>";
+		};
+		20A119DA21D2BB500050656A /* Alexo ChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				20A119DB21D2BB500050656A /* Alexo_ChatUITests.swift */,
+				20A119DD21D2BB500050656A /* Info.plist */,
+			);
+			path = "Alexo ChatUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20A119B721D2BB4D0050656A /* Alexo Chat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20A119E021D2BB500050656A /* Build configuration list for PBXNativeTarget "Alexo Chat" */;
+			buildPhases = (
+				20A119B421D2BB4D0050656A /* Sources */,
+				20A119B521D2BB4D0050656A /* Frameworks */,
+				20A119B621D2BB4D0050656A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Alexo Chat";
+			productName = "Alexo Chat";
+			productReference = 20A119B821D2BB4D0050656A /* Alexo Chat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20A119CB21D2BB500050656A /* Alexo ChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20A119E321D2BB500050656A /* Build configuration list for PBXNativeTarget "Alexo ChatTests" */;
+			buildPhases = (
+				20A119C821D2BB500050656A /* Sources */,
+				20A119C921D2BB500050656A /* Frameworks */,
+				20A119CA21D2BB500050656A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20A119CE21D2BB500050656A /* PBXTargetDependency */,
+			);
+			name = "Alexo ChatTests";
+			productName = "Alexo ChatTests";
+			productReference = 20A119CC21D2BB500050656A /* Alexo ChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		20A119D621D2BB500050656A /* Alexo ChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20A119E621D2BB500050656A /* Build configuration list for PBXNativeTarget "Alexo ChatUITests" */;
+			buildPhases = (
+				20A119D321D2BB500050656A /* Sources */,
+				20A119D421D2BB500050656A /* Frameworks */,
+				20A119D521D2BB500050656A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20A119D921D2BB500050656A /* PBXTargetDependency */,
+			);
+			name = "Alexo ChatUITests";
+			productName = "Alexo ChatUITests";
+			productReference = 20A119D721D2BB500050656A /* Alexo ChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20A119B021D2BB4D0050656A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Emil Karimov";
+				TargetAttributes = {
+					20A119B721D2BB4D0050656A = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					20A119CB21D2BB500050656A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 20A119B721D2BB4D0050656A;
+					};
+					20A119D621D2BB500050656A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 20A119B721D2BB4D0050656A;
+					};
+				};
+			};
+			buildConfigurationList = 20A119B321D2BB4D0050656A /* Build configuration list for PBXProject "Alexo Chat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20A119AF21D2BB4D0050656A;
+			productRefGroup = 20A119B921D2BB4D0050656A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20A119B721D2BB4D0050656A /* Alexo Chat */,
+				20A119CB21D2BB500050656A /* Alexo ChatTests */,
+				20A119D621D2BB500050656A /* Alexo ChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20A119B621D2BB4D0050656A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A119C621D2BB500050656A /* LaunchScreen.storyboard in Resources */,
+				20A119C321D2BB500050656A /* Assets.xcassets in Resources */,
+				20A119C121D2BB4D0050656A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A119CA21D2BB500050656A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A119D521D2BB500050656A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20A119B421D2BB4D0050656A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A119BE21D2BB4D0050656A /* ViewController.swift in Sources */,
+				20A119BC21D2BB4D0050656A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A119C821D2BB500050656A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A119D121D2BB500050656A /* Alexo_ChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20A119D321D2BB500050656A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A119DC21D2BB500050656A /* Alexo_ChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20A119CE21D2BB500050656A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20A119B721D2BB4D0050656A /* Alexo Chat */;
+			targetProxy = 20A119CD21D2BB500050656A /* PBXContainerItemProxy */;
+		};
+		20A119D921D2BB500050656A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20A119B721D2BB4D0050656A /* Alexo Chat */;
+			targetProxy = 20A119D821D2BB500050656A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20A119BF21D2BB4D0050656A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20A119C021D2BB4D0050656A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20A119C421D2BB500050656A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20A119C521D2BB500050656A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20A119DE21D2BB500050656A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20A119DF21D2BB500050656A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20A119E121D2BB500050656A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = "Alexo Chat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eskaria.Alexo-Chat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20A119E221D2BB500050656A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = "Alexo Chat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eskaria.Alexo-Chat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20A119E421D2BB500050656A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = "Alexo ChatTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eskaria.Alexo-ChatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alexo Chat.app/Alexo Chat";
+			};
+			name = Debug;
+		};
+		20A119E521D2BB500050656A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = "Alexo ChatTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eskaria.Alexo-ChatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alexo Chat.app/Alexo Chat";
+			};
+			name = Release;
+		};
+		20A119E721D2BB500050656A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = "Alexo ChatUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eskaria.Alexo-ChatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Alexo Chat";
+			};
+			name = Debug;
+		};
+		20A119E821D2BB500050656A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V93MRMNEKV;
+				INFOPLIST_FILE = "Alexo ChatUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eskaria.Alexo-ChatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Alexo Chat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20A119B321D2BB4D0050656A /* Build configuration list for PBXProject "Alexo Chat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A119DE21D2BB500050656A /* Debug */,
+				20A119DF21D2BB500050656A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20A119E021D2BB500050656A /* Build configuration list for PBXNativeTarget "Alexo Chat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A119E121D2BB500050656A /* Debug */,
+				20A119E221D2BB500050656A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20A119E321D2BB500050656A /* Build configuration list for PBXNativeTarget "Alexo ChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A119E421D2BB500050656A /* Debug */,
+				20A119E521D2BB500050656A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20A119E621D2BB500050656A /* Build configuration list for PBXNativeTarget "Alexo ChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20A119E721D2BB500050656A /* Debug */,
+				20A119E821D2BB500050656A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20A119B021D2BB4D0050656A /* Project object */;
+}
