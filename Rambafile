@@ -1,0 +1,33 @@
+### Headers settings
+company: Emil Karimov
+
+### Xcode project settings
+project_name: Alexo Chat
+xcodeproj_path: Alexo Chat.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Alexo Chat
+
+# The file path for new modules
+project_file_path: Alexo Chat/Modules/
+
+# The Xcode group path to new modules
+project_group_path: Alexo Chat/Modules/
+
+### Tests generation settings section
+# The tests target name
+test_target: Alexo ChatTests
+
+# The file path for new tests
+test_file_path: Alexo ChatTests/Modules/
+
+# The Xcode group path to new tests
+test_group_path: Alexo ChatTests/Modules/
+
+### Dependencies settings section
+podfile_path: Podfile
+
+### Templates
+templates:
+- {name: viper}
