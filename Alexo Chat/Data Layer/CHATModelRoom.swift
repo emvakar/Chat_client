@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import DataSources
 
-class CHATModelRoom: NSObject {
+class CHATModelRoom: NSObject, Diffable {
 
+    var diffIdentifier: String {
+        return self.id
+    }
+    
     @objc let id: String
     let owners: [String]
     let members: [String]

@@ -25,6 +25,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.setNeedsStatusBarAppearanceUpdate()
 
     }

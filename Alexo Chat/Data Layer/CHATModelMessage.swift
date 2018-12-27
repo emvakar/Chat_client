@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import DataSources
 import MessengerKit
 
-class CHATModelMessage {
+class CHATModelMessage: Diffable {
+    
+    var diffIdentifier: String {
+        return self.id
+    }
 
     let id, roomID, senderID, text: String
     let createdAt: Date

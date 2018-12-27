@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let domain = Bundle.main.bundleIdentifier!
 //        UserDefaults.standard.removePersistentDomain(forName: domain)
 //        UserDefaults.standard.synchronize()
-
+        UINavigationBar.appearance().prefersLargeTitles = true
+        
         let networkWrapper = NetworkRequestWrapper()
 
         self.networkProvider = NetworkRequestProvider(networkWrapper: networkWrapper, tokenRefresher: nil, accountManager: self.accountManager, websocketManager: self.websocketManager)
