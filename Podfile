@@ -1,15 +1,25 @@
 platform :ios, '11.0'
 
+def ownPods
+    pod 'Starscream', :git => 'https://github.com/emvakar/Starscream.git'
+
+    pod 'MessengerKit', :git => 'https://github.com/emvakar/MessengerKit.git', :branch => 'develop'
+    pod 'ReverseExtension', :git => 'https://github.com/emvakar/ReverseExtension.git', :branch => 'swift4.2'
+    pod 'StatusProvider', :git => 'https://github.com/emvakar/StatusProvider.git', :branch => 'develop'
+    pod 'DataSources', :git => 'https://github.com/emvakar/DataSources.git', :branch => 'develop'
+
+end
+
+
 target 'Alexo Chat' do
     use_frameworks!
+    inhibit_all_warnings!
     
     pod 'SnapKit'
     pod 'Moya'
     pod 'KRProgressHUD'
     pod 'Cosmos'
-    pod 'MessengerKit', :git => 'https://github.com/emvakar/MessengerKit.git', :branch => 'UUID' #:path => '../../Frameworks/MessengerKit'
-    pod 'Starscream', :git => 'https://github.com/emvakar/Starscream.git'
-    pod 'ReverseExtension', :git => 'https://github.com/emvakar/ReverseExtension.git', :branch => 'swift4.2' #:path => '../../Frameworks/ReverseExtension'
+    ownPods
     
     target 'Alexo ChatTests' do
         inherit! :search_paths
