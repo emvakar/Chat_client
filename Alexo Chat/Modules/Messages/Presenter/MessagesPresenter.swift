@@ -37,7 +37,13 @@ extension MessagesPresenter: MessagesPresenterProtocol {
 
         self.fetchMessages()
 
-        self.view?.setInviteButton()
+        self.room.owners.forEach {
+            if self.accountManager.getUserId() == $0 {
+                self.isOwner = true
+                self.view?.setInviteButton()
+                return
+            }
+        }
     }
 
     func typingStart() {
@@ -45,7 +51,8 @@ extension MessagesPresenter: MessagesPresenterProtocol {
         if !isTyping {
             self.interactor.startTyping(roomId: self.room.id)
             self.isTyping = true
-            let user = User(id: UUID().uuidString, displayName: self.getUserNackname().isEmpty ? "Some user" : self.getUserNackname())
+            let credentials = self.getUserCredentials()
+            let user = User(id: credentials.userId, displayName: credentials.nickname.isEmpty ? "Some user" : credentials.nickname)
             self.view?.startTyping(users: [user])
         }
 
@@ -90,8 +97,8 @@ extension MessagesPresenter: MessagesPresenterProtocol {
         }
     }
 
-    func getUserNackname() -> String {
-        return self.accountManager.getUsername()
+    func getUserCredentials() -> (userId: String, nickname: String) {
+        return (self.accountManager.getUserId(), self.accountManager.getUsername())
     }
 
     func inviteTapped(userId: String) {

@@ -70,8 +70,8 @@ extension MessagesViewController: MessagesViewProtocol {
 
     override func inputViewPrimaryActionTriggered(inputView: MSGInputView) {
 
-        let credentials = self.presenter.getUserNackname()
-        let user = User(id: UUID().uuidString, displayName: credentials)
+        let credentials = self.presenter.getUserCredentials()
+        let user = User(id: credentials.userId, displayName: credentials.nickname)
         let messageBody: MSGMessageBody = .text(inputView.message)
         let message = MSGMessage(id: UUID().uuidString, body: messageBody, user: user, sentAt: Date())
 

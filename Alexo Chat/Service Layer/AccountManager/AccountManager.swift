@@ -53,7 +53,7 @@ extension AccountManager {
 
     func getBaseUrl() -> String {
         switch environmet {
-        case .develop: return "http://127.0.0.1:8080"
+        case .develop: return "http://192.168.100.2:8080"
         case .production: return "http://127.0.0.1:8080"
         case .local: return "http://127.0.0.1:8080"
         }
@@ -91,13 +91,13 @@ extension AccountManager {
         return defaults.string(forKey: DefaultsKeys.bearer_token) ?? ""
     }
 
-//    func setUserId(userId: String) {
-//        defaults.set(userId, forKey: DefaultsKeys.user_id)
-//    }
-//
-//    func getUserId() -> String {
-//        return defaults.string(forKey: DefaultsKeys.user_id) ?? ""
-//    }
+    func setUserId(userId: String) {
+        defaults.set(userId, forKey: DefaultsKeys.user_id)
+    }
+
+    func getUserId() -> String {
+        return defaults.string(forKey: DefaultsKeys.user_id) ?? ""
+    }
 
     func setUsername(nickname: String) {
         defaults.set(nickname, forKey: DefaultsKeys.user_nickname)
