@@ -46,7 +46,7 @@ extension RoomListInteractor: RoomListInteractorProtocol {
             completion(roomsModel, error)
         }
     }
-    
+
     func createRoom(name: String, shared: Bool, completion: @escaping (CHATRoomAPIResponse?, NetworkError?) -> Void) {
         self.networkController.createRoom(name: name, shared: shared, completion: completion)
     }
