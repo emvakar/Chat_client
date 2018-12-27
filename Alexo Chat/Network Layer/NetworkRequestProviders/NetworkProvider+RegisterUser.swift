@@ -27,7 +27,6 @@ extension NetworkRequestProvider {
             do {
                 let jsonDecoder = JSONDecoder()
                 let models = try jsonDecoder.decode(CHATSignupApiResponse.self, from: data)
-                self.accountManager.setUserId(userId: models.id)
                 self.accountManager.setUsername(nickname: models.nickname)
                 completion(statusCode, models, nil)
             } catch let error {

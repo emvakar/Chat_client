@@ -20,7 +20,7 @@ protocol MessagesWireFrameProtocol: class { }
 
 protocol MessagesPresenterProtocol: class {
     func viewDidLoad()
-    func getUserCredentials() -> (userId: String, nickname: String)
+    func getUserNackname() -> String
     func sendMessage(_ message: MSGMessage)
     func typingStart()
     func inviteTapped(userId: String)
