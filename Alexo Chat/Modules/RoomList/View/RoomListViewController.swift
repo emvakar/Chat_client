@@ -33,7 +33,7 @@ class RoomListViewController: BaseViewController {
         super.viewDidDisappear(animated)
         self.presenter.viewDidAppear()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createUI()
@@ -125,7 +125,7 @@ extension RoomListViewController: RoomListViewProtocol {
         let banner = NotificationBanner(title: payload.fromUser.nickname, subtitle: payload.text, leftView: label, style: BannerStyle.info)
         banner.show()
     }
-    
+
     func endFetching() {
         self.tableView.isLoading = false
     }
@@ -136,6 +136,9 @@ extension RoomListViewController: RoomListViewProtocol {
 
     func failedNextPageLoaded(_ text: String?) {
         print("show failedNextPageLoaded")
+        let banner = NotificationBanner(title: "Ошибка заргузки", subtitle: "Проверьте интернет соединение", style: BannerStyle.danger)
+        banner.autoDismiss = false
+        banner.show()
     }
 
     func showTableStatus(_ status: StatusModel) {
@@ -149,12 +152,12 @@ extension RoomListViewController: RoomListViewProtocol {
 
     func updateItems(_ items: [CHATModelRoom]) {
         self.hideStatus()
-        
+
         self.dataController.update(items: items, updateMode: .partial(animated: true)) {
             // Completion update
             self.tableView.isLoading = false
         }
-        
+
     }
 
     func reloadPages() {
