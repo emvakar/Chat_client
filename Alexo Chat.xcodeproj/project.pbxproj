@@ -37,7 +37,6 @@
 		20D0C32E21D2EE2D00FEEEF8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C31821D2EE2C00FEEEF8 /* BaseViewController.swift */; };
 		20D0C32F21D2EE2D00FEEEF8 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C31921D2EE2C00FEEEF8 /* BaseTableViewCell.swift */; };
 		20D0C33021D2EE2D00FEEEF8 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C31A21D2EE2C00FEEEF8 /* BaseInteractor.swift */; };
-		20D0C33121D2EE2D00FEEEF8 /* BaseTableFooterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C31B21D2EE2C00FEEEF8 /* BaseTableFooterContainer.swift */; };
 		20D0C33221D2EE2D00FEEEF8 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C31C21D2EE2C00FEEEF8 /* BasePresenter.swift */; };
 		20D0C33321D2EE2D00FEEEF8 /* BaseTabBarControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C31F21D2EE2C00FEEEF8 /* BaseTabBarControllerPresenter.swift */; };
 		20D0C33421D2EE2D00FEEEF8 /* BaseTabBarControllerWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C32121D2EE2C00FEEEF8 /* BaseTabBarControllerWireFrame.swift */; };
@@ -102,7 +101,6 @@
 		20D0C43D21D2F01000FEEEF8 /* IKSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3C421D2F01000FEEEF8 /* IKSearchBarView.swift */; };
 		20D0C43E21D2F01000FEEEF8 /* IKFilterNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3C521D2F01000FEEEF8 /* IKFilterNotificationView.swift */; };
 		20D0C43F21D2F01000FEEEF8 /* IKFullScreenAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3C621D2F01000FEEEF8 /* IKFullScreenAlertView.swift */; };
-		20D0C44021D2F01000FEEEF8 /* IKErrorBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3C721D2F01000FEEEF8 /* IKErrorBarView.swift */; };
 		20D0C44121D2F01000FEEEF8 /* IKBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3C821D2F01000FEEEF8 /* IKBlurView.swift */; };
 		20D0C44221D2F01000FEEEF8 /* IKFullScreenAlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3C921D2F01000FEEEF8 /* IKFullScreenAlertConfiguration.swift */; };
 		20D0C44321D2F01000FEEEF8 /* IKFullScreenAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3CA21D2F01000FEEEF8 /* IKFullScreenAlertViewController.swift */; };
@@ -116,32 +114,6 @@
 		20D0C45021D2F01000FEEEF8 /* IKDisclouserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3D721D2F01000FEEEF8 /* IKDisclouserView.swift */; };
 		20D0C45321D2F01000FEEEF8 /* IKUIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3DB21D2F01000FEEEF8 /* IKUIBuilder.swift */; };
 		20D0C45421D2F01000FEEEF8 /* IKAppearanceUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3DC21D2F01000FEEEF8 /* IKAppearanceUI.swift */; };
-		20D0C45521D2F01000FEEEF8 /* IKModelSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3DF21D2F01000FEEEF8 /* IKModelSection.swift */; };
-		20D0C45621D2F01000FEEEF8 /* IKDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3E021D2F01000FEEEF8 /* IKDataSource.swift */; };
-		20D0C45721D2F01000FEEEF8 /* IKTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3E121D2F01000FEEEF8 /* IKTableViewModel.swift */; };
-		20D0C45821D2F01000FEEEF8 /* IKPlainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3E321D2F01000FEEEF8 /* IKPlainDataSource.swift */; };
-		20D0C45921D2F01000FEEEF8 /* IKDailyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3E521D2F01000FEEEF8 /* IKDailyDataSource.swift */; };
-		20D0C45A21D2F01000FEEEF8 /* IKTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3E621D2F01000FEEEF8 /* IKTestModel.swift */; };
-		20D0C45B21D2F01000FEEEF8 /* IKTableFooterContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3E921D2F01000FEEEF8 /* IKTableFooterContainerView.swift */; };
-		20D0C45C21D2F01000FEEEF8 /* IKFilterNotificationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3EB21D2F01000FEEEF8 /* IKFilterNotificationStruct.swift */; };
-		20D0C45D21D2F01000FEEEF8 /* IKFilterToolBarStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3EC21D2F01000FEEEF8 /* IKFilterToolBarStruct.swift */; };
-		20D0C45E21D2F01000FEEEF8 /* IKTableViewOptionsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3ED21D2F01000FEEEF8 /* IKTableViewOptionsStruct.swift */; };
-		20D0C45F21D2F01000FEEEF8 /* IKTableControllerStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3EE21D2F01000FEEEF8 /* IKTableControllerStates.swift */; };
-		20D0C46021D2F01000FEEEF8 /* IKTableConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3EF21D2F01000FEEEF8 /* IKTableConfiguration.swift */; };
-		20D0C46121D2F01000FEEEF8 /* IKTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3F121D2F01000FEEEF8 /* IKTableController.swift */; };
-		20D0C46221D2F01000FEEEF8 /* TestIconLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3F321D2F01000FEEEF8 /* TestIconLabelViewController.swift */; };
-		20D0C46321D2F01000FEEEF8 /* IKBaseContainerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3F521D2F01000FEEEF8 /* IKBaseContainerFooterView.swift */; };
-		20D0C46421D2F01000FEEEF8 /* IKBaseFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3F621D2F01000FEEEF8 /* IKBaseFooterView.swift */; };
-		20D0C46521D2F01000FEEEF8 /* IKToolBarNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3F821D2F01000FEEEF8 /* IKToolBarNotificationView.swift */; };
-		20D0C46621D2F01000FEEEF8 /* IKPageLoaderErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3F921D2F01000FEEEF8 /* IKPageLoaderErrorView.swift */; };
-		20D0C46721D2F01000FEEEF8 /* IKLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3FA21D2F01000FEEEF8 /* IKLoadingView.swift */; };
-		20D0C46821D2F01000FEEEF8 /* IKTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3FB21D2F01000FEEEF8 /* IKTableFooterView.swift */; };
-		20D0C46921D2F01000FEEEF8 /* IKToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3FC21D2F01000FEEEF8 /* IKToolBarView.swift */; };
-		20D0C46A21D2F01000FEEEF8 /* IKTappableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3FD21D2F01000FEEEF8 /* IKTappableButton.swift */; };
-		20D0C46B21D2F01000FEEEF8 /* IKCurtainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C3FE21D2F01000FEEEF8 /* IKCurtainView.swift */; };
-		20D0C46C21D2F01000FEEEF8 /* IKTableFooterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C40021D2F01000FEEEF8 /* IKTableFooterProtocol.swift */; };
-		20D0C46D21D2F01000FEEEF8 /* IKTableVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C40121D2F01000FEEEF8 /* IKTableVCProtocol.swift */; };
-		20D0C46E21D2F01000FEEEF8 /* IKTableToolbarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C40221D2F01000FEEEF8 /* IKTableToolbarProtocols.swift */; };
 		20D0C47621D32EF800FEEEF8 /* WebsocketEventPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C47521D32EF800FEEEF8 /* WebsocketEventPrototype.swift */; };
 		20D0C60B21D342CA00FEEEF8 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C60A21D342CA00FEEEF8 /* WebSocketManager.swift */; };
 		20D0C61A21D34C9F00FEEEF8 /* WS+JoinedRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C61021D34C9F00FEEEF8 /* WS+JoinedRoom.swift */; };
@@ -249,7 +221,6 @@
 		20D0C31821D2EE2C00FEEEF8 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		20D0C31921D2EE2C00FEEEF8 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		20D0C31A21D2EE2C00FEEEF8 /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
-		20D0C31B21D2EE2C00FEEEF8 /* BaseTableFooterContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableFooterContainer.swift; sourceTree = "<group>"; };
 		20D0C31C21D2EE2C00FEEEF8 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		20D0C31F21D2EE2C00FEEEF8 /* BaseTabBarControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarControllerPresenter.swift; sourceTree = "<group>"; };
 		20D0C32121D2EE2C00FEEEF8 /* BaseTabBarControllerWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarControllerWireFrame.swift; sourceTree = "<group>"; };
@@ -314,7 +285,6 @@
 		20D0C3C421D2F01000FEEEF8 /* IKSearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKSearchBarView.swift; sourceTree = "<group>"; };
 		20D0C3C521D2F01000FEEEF8 /* IKFilterNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKFilterNotificationView.swift; sourceTree = "<group>"; };
 		20D0C3C621D2F01000FEEEF8 /* IKFullScreenAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKFullScreenAlertView.swift; sourceTree = "<group>"; };
-		20D0C3C721D2F01000FEEEF8 /* IKErrorBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKErrorBarView.swift; sourceTree = "<group>"; };
 		20D0C3C821D2F01000FEEEF8 /* IKBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKBlurView.swift; sourceTree = "<group>"; };
 		20D0C3C921D2F01000FEEEF8 /* IKFullScreenAlertConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKFullScreenAlertConfiguration.swift; sourceTree = "<group>"; };
 		20D0C3CA21D2F01000FEEEF8 /* IKFullScreenAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKFullScreenAlertViewController.swift; sourceTree = "<group>"; };
@@ -328,32 +298,6 @@
 		20D0C3D721D2F01000FEEEF8 /* IKDisclouserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKDisclouserView.swift; sourceTree = "<group>"; };
 		20D0C3DB21D2F01000FEEEF8 /* IKUIBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKUIBuilder.swift; sourceTree = "<group>"; };
 		20D0C3DC21D2F01000FEEEF8 /* IKAppearanceUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKAppearanceUI.swift; sourceTree = "<group>"; };
-		20D0C3DF21D2F01000FEEEF8 /* IKModelSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKModelSection.swift; sourceTree = "<group>"; };
-		20D0C3E021D2F01000FEEEF8 /* IKDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKDataSource.swift; sourceTree = "<group>"; };
-		20D0C3E121D2F01000FEEEF8 /* IKTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableViewModel.swift; sourceTree = "<group>"; };
-		20D0C3E321D2F01000FEEEF8 /* IKPlainDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKPlainDataSource.swift; sourceTree = "<group>"; };
-		20D0C3E521D2F01000FEEEF8 /* IKDailyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKDailyDataSource.swift; sourceTree = "<group>"; };
-		20D0C3E621D2F01000FEEEF8 /* IKTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTestModel.swift; sourceTree = "<group>"; };
-		20D0C3E921D2F01000FEEEF8 /* IKTableFooterContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableFooterContainerView.swift; sourceTree = "<group>"; };
-		20D0C3EB21D2F01000FEEEF8 /* IKFilterNotificationStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKFilterNotificationStruct.swift; sourceTree = "<group>"; };
-		20D0C3EC21D2F01000FEEEF8 /* IKFilterToolBarStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKFilterToolBarStruct.swift; sourceTree = "<group>"; };
-		20D0C3ED21D2F01000FEEEF8 /* IKTableViewOptionsStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableViewOptionsStruct.swift; sourceTree = "<group>"; };
-		20D0C3EE21D2F01000FEEEF8 /* IKTableControllerStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableControllerStates.swift; sourceTree = "<group>"; };
-		20D0C3EF21D2F01000FEEEF8 /* IKTableConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableConfiguration.swift; sourceTree = "<group>"; };
-		20D0C3F121D2F01000FEEEF8 /* IKTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableController.swift; sourceTree = "<group>"; };
-		20D0C3F321D2F01000FEEEF8 /* TestIconLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestIconLabelViewController.swift; sourceTree = "<group>"; };
-		20D0C3F521D2F01000FEEEF8 /* IKBaseContainerFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKBaseContainerFooterView.swift; sourceTree = "<group>"; };
-		20D0C3F621D2F01000FEEEF8 /* IKBaseFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKBaseFooterView.swift; sourceTree = "<group>"; };
-		20D0C3F821D2F01000FEEEF8 /* IKToolBarNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKToolBarNotificationView.swift; sourceTree = "<group>"; };
-		20D0C3F921D2F01000FEEEF8 /* IKPageLoaderErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKPageLoaderErrorView.swift; sourceTree = "<group>"; };
-		20D0C3FA21D2F01000FEEEF8 /* IKLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKLoadingView.swift; sourceTree = "<group>"; };
-		20D0C3FB21D2F01000FEEEF8 /* IKTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableFooterView.swift; sourceTree = "<group>"; };
-		20D0C3FC21D2F01000FEEEF8 /* IKToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKToolBarView.swift; sourceTree = "<group>"; };
-		20D0C3FD21D2F01000FEEEF8 /* IKTappableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTappableButton.swift; sourceTree = "<group>"; };
-		20D0C3FE21D2F01000FEEEF8 /* IKCurtainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKCurtainView.swift; sourceTree = "<group>"; };
-		20D0C40021D2F01000FEEEF8 /* IKTableFooterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableFooterProtocol.swift; sourceTree = "<group>"; };
-		20D0C40121D2F01000FEEEF8 /* IKTableVCProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableVCProtocol.swift; sourceTree = "<group>"; };
-		20D0C40221D2F01000FEEEF8 /* IKTableToolbarProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKTableToolbarProtocols.swift; sourceTree = "<group>"; };
 		20D0C47521D32EF800FEEEF8 /* WebsocketEventPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketEventPrototype.swift; sourceTree = "<group>"; };
 		20D0C60A21D342CA00FEEEF8 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		20D0C61021D34C9F00FEEEF8 /* WS+JoinedRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WS+JoinedRoom.swift"; sourceTree = "<group>"; };
@@ -665,7 +609,6 @@
 				20D0C31821D2EE2C00FEEEF8 /* BaseViewController.swift */,
 				20D0C31921D2EE2C00FEEEF8 /* BaseTableViewCell.swift */,
 				20D0C31A21D2EE2C00FEEEF8 /* BaseInteractor.swift */,
-				20D0C31B21D2EE2C00FEEEF8 /* BaseTableFooterContainer.swift */,
 				20D0C31C21D2EE2C00FEEEF8 /* BasePresenter.swift */,
 				20D0C31D21D2EE2C00FEEEF8 /* BaseTabBarController */,
 			);
@@ -788,7 +731,6 @@
 				20D0C3A921D2F01000FEEEF8 /* Extensions */,
 				20D0C3BE21D2F01000FEEEF8 /* CustomViews */,
 				20D0C3DA21D2F01000FEEEF8 /* UIBuilder */,
-				20D0C3DD21D2F01000FEEEF8 /* TableViewController */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -941,7 +883,6 @@
 				20D0C3C421D2F01000FEEEF8 /* IKSearchBarView.swift */,
 				20D0C3C521D2F01000FEEEF8 /* IKFilterNotificationView.swift */,
 				20D0C3C621D2F01000FEEEF8 /* IKFullScreenAlertView.swift */,
-				20D0C3C721D2F01000FEEEF8 /* IKErrorBarView.swift */,
 				20D0C3C821D2F01000FEEEF8 /* IKBlurView.swift */,
 				20D0C3C921D2F01000FEEEF8 /* IKFullScreenAlertConfiguration.swift */,
 				20D0C3CA21D2F01000FEEEF8 /* IKFullScreenAlertViewController.swift */,
@@ -964,127 +905,6 @@
 				20D0C3DC21D2F01000FEEEF8 /* IKAppearanceUI.swift */,
 			);
 			path = UIBuilder;
-			sourceTree = "<group>";
-		};
-		20D0C3DD21D2F01000FEEEF8 /* TableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3DE21D2F01000FEEEF8 /* DataSource */,
-				20D0C3E621D2F01000FEEEF8 /* IKTestModel.swift */,
-				20D0C3E721D2F01000FEEEF8 /* Table */,
-			);
-			path = TableViewController;
-			sourceTree = "<group>";
-		};
-		20D0C3DE21D2F01000FEEEF8 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3DF21D2F01000FEEEF8 /* IKModelSection.swift */,
-				20D0C3E021D2F01000FEEEF8 /* IKDataSource.swift */,
-				20D0C3E121D2F01000FEEEF8 /* IKTableViewModel.swift */,
-				20D0C3E221D2F01000FEEEF8 /* PlainDataSource */,
-				20D0C3E421D2F01000FEEEF8 /* DayliDataSource */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		20D0C3E221D2F01000FEEEF8 /* PlainDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3E321D2F01000FEEEF8 /* IKPlainDataSource.swift */,
-			);
-			path = PlainDataSource;
-			sourceTree = "<group>";
-		};
-		20D0C3E421D2F01000FEEEF8 /* DayliDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3E521D2F01000FEEEF8 /* IKDailyDataSource.swift */,
-			);
-			path = DayliDataSource;
-			sourceTree = "<group>";
-		};
-		20D0C3E721D2F01000FEEEF8 /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3E821D2F01000FEEEF8 /* Footer */,
-				20D0C3EA21D2F01000FEEEF8 /* Configuration */,
-				20D0C3F021D2F01000FEEEF8 /* TableController */,
-				20D0C3F221D2F01000FEEEF8 /* TestTableViewController */,
-				20D0C3F421D2F01000FEEEF8 /* Views */,
-				20D0C3FF21D2F01000FEEEF8 /* Protocols */,
-			);
-			path = Table;
-			sourceTree = "<group>";
-		};
-		20D0C3E821D2F01000FEEEF8 /* Footer */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3E921D2F01000FEEEF8 /* IKTableFooterContainerView.swift */,
-			);
-			path = Footer;
-			sourceTree = "<group>";
-		};
-		20D0C3EA21D2F01000FEEEF8 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3EB21D2F01000FEEEF8 /* IKFilterNotificationStruct.swift */,
-				20D0C3EC21D2F01000FEEEF8 /* IKFilterToolBarStruct.swift */,
-				20D0C3ED21D2F01000FEEEF8 /* IKTableViewOptionsStruct.swift */,
-				20D0C3EE21D2F01000FEEEF8 /* IKTableControllerStates.swift */,
-				20D0C3EF21D2F01000FEEEF8 /* IKTableConfiguration.swift */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		20D0C3F021D2F01000FEEEF8 /* TableController */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3F121D2F01000FEEEF8 /* IKTableController.swift */,
-			);
-			path = TableController;
-			sourceTree = "<group>";
-		};
-		20D0C3F221D2F01000FEEEF8 /* TestTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3F321D2F01000FEEEF8 /* TestIconLabelViewController.swift */,
-			);
-			path = TestTableViewController;
-			sourceTree = "<group>";
-		};
-		20D0C3F421D2F01000FEEEF8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3F521D2F01000FEEEF8 /* IKBaseContainerFooterView.swift */,
-				20D0C3F621D2F01000FEEEF8 /* IKBaseFooterView.swift */,
-				20D0C3F721D2F01000FEEEF8 /* SupportingViews */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		20D0C3F721D2F01000FEEEF8 /* SupportingViews */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C3F821D2F01000FEEEF8 /* IKToolBarNotificationView.swift */,
-				20D0C3F921D2F01000FEEEF8 /* IKPageLoaderErrorView.swift */,
-				20D0C3FA21D2F01000FEEEF8 /* IKLoadingView.swift */,
-				20D0C3FB21D2F01000FEEEF8 /* IKTableFooterView.swift */,
-				20D0C3FC21D2F01000FEEEF8 /* IKToolBarView.swift */,
-				20D0C3FD21D2F01000FEEEF8 /* IKTappableButton.swift */,
-				20D0C3FE21D2F01000FEEEF8 /* IKCurtainView.swift */,
-			);
-			path = SupportingViews;
-			sourceTree = "<group>";
-		};
-		20D0C3FF21D2F01000FEEEF8 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				20D0C40021D2F01000FEEEF8 /* IKTableFooterProtocol.swift */,
-				20D0C40121D2F01000FEEEF8 /* IKTableVCProtocol.swift */,
-				20D0C40221D2F01000FEEEF8 /* IKTableToolbarProtocols.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		20D0C47121D2F2D700FEEEF8 /* Data Layer */ = {
@@ -1432,6 +1252,7 @@
 				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MessengerKit/MessengerKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PagingTableView/PagingTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/ReverseExtension/ReverseExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -1447,6 +1268,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessengerKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagingTableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReverseExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -1537,22 +1359,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D0C46E21D2F01000FEEEF8 /* IKTableToolbarProtocols.swift in Sources */,
 				20D0C42C21D2F01000FEEEF8 /* UIViewController+Extension.swift in Sources */,
 				20D0C42D21D2F01000FEEEF8 /* IKUIColorExtension.swift in Sources */,
 				20D0C62021D34C9F00FEEEF8 /* WS+LeftRoom.swift in Sources */,
 				20D0C63521D39C5A00FEEEF8 /* CHATMessagesApiRequest.swift in Sources */,
 				20D0C29421D2EA9100FEEEF8 /* NetworkTarget.swift in Sources */,
 				20D0C43621D2F01000FEEEF8 /* NSNumberExtension.swift in Sources */,
-				20D0C46021D2F01000FEEEF8 /* IKTableConfiguration.swift in Sources */,
-				20D0C44021D2F01000FEEEF8 /* IKErrorBarView.swift in Sources */,
 				20D0C42B21D2F01000FEEEF8 /* Bundle+Extension.swift in Sources */,
 				20D0C64A21D39FB300FEEEF8 /* NetworkProvider+CreateRoom.swift in Sources */,
 				20D0C41721D2F01000FEEEF8 /* TKLimitRegexTextViewValidator.swift in Sources */,
 				20D0C44A21D2F01000FEEEF8 /* IKFilterToolBarView.swift in Sources */,
 				20D0C44121D2F01000FEEEF8 /* IKBlurView.swift in Sources */,
 				20D0C44721D2F01000FEEEF8 /* IKSwitcher.swift in Sources */,
-				20D0C45F21D2F01000FEEEF8 /* IKTableControllerStates.swift in Sources */,
 				20D0C33221D2EE2D00FEEEF8 /* BasePresenter.swift in Sources */,
 				20D0C61B21D34C9F00FEEEF8 /* WS+Typing.swift in Sources */,
 				20D0C62721D3603700FEEEF8 /* TypingBuffer.swift in Sources */,
@@ -1570,9 +1388,7 @@
 				20D0C2FB21D2EB6F00FEEEF8 /* CHATSignupApiResponse.swift in Sources */,
 				20D0C64E21D39FB300FEEEF8 /* NetworkProvider+SendMessageDirect.swift in Sources */,
 				20D0C65021D39FB300FEEEF8 /* NetworkProvider+GetRooms.swift in Sources */,
-				20D0C33121D2EE2D00FEEEF8 /* BaseTableFooterContainer.swift in Sources */,
 				20D0C44221D2F01000FEEEF8 /* IKFullScreenAlertConfiguration.swift in Sources */,
-				20D0C46621D2F01000FEEEF8 /* IKPageLoaderErrorView.swift in Sources */,
 				20D0C61D21D34C9F00FEEEF8 /* WS+Message.swift in Sources */,
 				20D0C32E21D2EE2D00FEEEF8 /* BaseViewController.swift in Sources */,
 				20D0C62E21D36A5800FEEEF8 /* CHATModelSignup.swift in Sources */,
@@ -1581,33 +1397,23 @@
 				20D0C61F21D34C9F00FEEEF8 /* WS+RoomCreated.swift in Sources */,
 				20D0C43021D2F01000FEEEF8 /* IKNSMutableAttributedString+Extension.swift in Sources */,
 				20D0C43921D2F01000FEEEF8 /* IKDisclouserTextFieldView.swift in Sources */,
-				20D0C45921D2F01000FEEEF8 /* IKDailyDataSource.swift in Sources */,
-				20D0C46721D2F01000FEEEF8 /* IKLoadingView.swift in Sources */,
 				20D0C45021D2F01000FEEEF8 /* IKDisclouserView.swift in Sources */,
 				20D0C43421D2F01000FEEEF8 /* IKSearchBarExtension.swift in Sources */,
 				20D0C33421D2EE2D00FEEEF8 /* BaseTabBarControllerWireFrame.swift in Sources */,
 				20D0C43B21D2F01000FEEEF8 /* IKHeaderView.swift in Sources */,
 				20D0C44421D2F01000FEEEF8 /* IKParamValueView.swift in Sources */,
 				20D0C33021D2EE2D00FEEEF8 /* BaseInteractor.swift in Sources */,
-				20D0C45A21D2F01000FEEEF8 /* IKTestModel.swift in Sources */,
 				20D0C44B21D2F01000FEEEF8 /* IKGradientView.swift in Sources */,
-				20D0C45D21D2F01000FEEEF8 /* IKFilterToolBarStruct.swift in Sources */,
 				20D0C42921D2F01000FEEEF8 /* UINavigationController+Extension.swift in Sources */,
 				20D0C43221D2F01000FEEEF8 /* IKDateExtension.swift in Sources */,
 				20D0C42A21D2F01000FEEEF8 /* Decimal+Extension.swift in Sources */,
-				20D0C45721D2F01000FEEEF8 /* IKTableViewModel.swift in Sources */,
-				20D0C46C21D2F01000FEEEF8 /* IKTableFooterProtocol.swift in Sources */,
 				20D0C42621D2F01000FEEEF8 /* UITableViewCell+Identifier.swift in Sources */,
-				20D0C46521D2F01000FEEEF8 /* IKToolBarNotificationView.swift in Sources */,
 				20D0C63421D39C5A00FEEEF8 /* CHATInviteToRoomApiRequest.swift in Sources */,
 				20D0C32C21D2EE2D00FEEEF8 /* BaseNavigationControllerProtocols.swift in Sources */,
-				20D0C45B21D2F01000FEEEF8 /* IKTableFooterContainerView.swift in Sources */,
 				20D0C43121D2F01000FEEEF8 /* UIBarButtonItem+FactoryMethods.swift in Sources */,
 				20D0C64C21D39FB300FEEEF8 /* NetworkProvider+GetMessages.swift in Sources */,
-				20D0C46221D2F01000FEEEF8 /* TestIconLabelViewController.swift in Sources */,
 				20D0C45321D2F01000FEEEF8 /* IKUIBuilder.swift in Sources */,
 				20D0C42721D2F01000FEEEF8 /* UIView+Extension.swift in Sources */,
-				20D0C45521D2F01000FEEEF8 /* IKModelSection.swift in Sources */,
 				20D0C45421D2F01000FEEEF8 /* IKAppearanceUI.swift in Sources */,
 				20D0C42221D2F01000FEEEF8 /* IKInterfaceImageProvider.swift in Sources */,
 				20D0C60B21D342CA00FEEEF8 /* WebSocketManager.swift in Sources */,
@@ -1617,7 +1423,6 @@
 				20D0C32D21D2EE2D00FEEEF8 /* BaseNavigationControllerInteractor.swift in Sources */,
 				20D0C29321D2EA9100FEEEF8 /* NetworkRequest.swift in Sources */,
 				20D0C30821D2EB6F00FEEEF8 /* NetworkRequestProvider.swift in Sources */,
-				20D0C46A21D2F01000FEEEF8 /* IKTappableButton.swift in Sources */,
 				20D0C41B21D2F01000FEEEF8 /* IKSeekBuffer.swift in Sources */,
 				20D0C33921D2EEDD00FEEEF8 /* ThemeManager.swift in Sources */,
 				20D0C64021D39E8200FEEEF8 /* CHATLoginApiResponse.swift in Sources */,
@@ -1638,20 +1443,13 @@
 				20D0C62521D359C200FEEEF8 /* LetterImageGenerator.swift in Sources */,
 				20A119BC21D2BB4D0050656A /* AppDelegate.swift in Sources */,
 				20D0C64121D39E8200FEEEF8 /* CHATMessageAPIResponse.swift in Sources */,
-				20D0C46121D2F01000FEEEF8 /* IKTableController.swift in Sources */,
 				20D0C29521D2EA9100FEEEF8 /* NetworkRequestWrapper.swift in Sources */,
-				20D0C45C21D2F01000FEEEF8 /* IKFilterNotificationStruct.swift in Sources */,
 				20D0C27A21D2E23B00FEEEF8 /* DIResolver.swift in Sources */,
 				20D0C62D21D36A5800FEEEF8 /* CHATModelRoom.swift in Sources */,
 				20D0C30721D2EB6F00FEEEF8 /* NetworkRequestProviderProtocols.swift in Sources */,
-				20D0C46421D2F01000FEEEF8 /* IKBaseFooterView.swift in Sources */,
 				20D0C42021D2F01000FEEEF8 /* IKBaseTableCell.swift in Sources */,
-				20D0C46B21D2F01000FEEEF8 /* IKCurtainView.swift in Sources */,
 				20D0C41921D2F01000FEEEF8 /* TKTextEditViewController.swift in Sources */,
-				20D0C46921D2F01000FEEEF8 /* IKToolBarView.swift in Sources */,
 				20D0C33621D2EE2D00FEEEF8 /* BaseTabBarControllerProtocols.swift in Sources */,
-				20D0C45821D2F01000FEEEF8 /* IKPlainDataSource.swift in Sources */,
-				20D0C46321D2F01000FEEEF8 /* IKBaseContainerFooterView.swift in Sources */,
 				20D0C29621D2EA9100FEEEF8 /* NetworkError.swift in Sources */,
 				20D0C63F21D39E8200FEEEF8 /* CHATRoomAPIResponse.swift in Sources */,
 				20D0C41E21D2F01000FEEEF8 /* IKBaseViewController.swift in Sources */,
@@ -1664,19 +1462,15 @@
 				20D0C42521D2F01000FEEEF8 /* IKDate+Extension.swift in Sources */,
 				20D0C62321D34C9F00FEEEF8 /* WS+MessageDeleted.swift in Sources */,
 				493375D7C074EE1F7A831A96 /* RoomListInteractor.swift in Sources */,
-				20D0C46D21D2F01000FEEEF8 /* IKTableVCProtocol.swift in Sources */,
 				92F6D269EB14A0A1DCD3F3DE /* RoomListProtocols.swift in Sources */,
 				20D0C43D21D2F01000FEEEF8 /* IKSearchBarView.swift in Sources */,
-				20D0C45E21D2F01000FEEEF8 /* IKTableViewOptionsStruct.swift in Sources */,
 				20D0C41521D2F01000FEEEF8 /* TKRegexTextViewValidator.swift in Sources */,
 				20D0C41D21D2F01000FEEEF8 /* IKBaseSegmentedViewController.swift in Sources */,
 				20D0C41621D2F01000FEEEF8 /* TKEmailTextViewValidator.swift in Sources */,
-				20D0C46821D2F01000FEEEF8 /* IKTableFooterView.swift in Sources */,
 				8204989583250B94C445B510 /* RoomListWireFrame.swift in Sources */,
 				20D0C62221D34C9F00FEEEF8 /* WS+MessageEdited.swift in Sources */,
 				20D0C43E21D2F01000FEEEF8 /* IKFilterNotificationView.swift in Sources */,
 				20D0C32821D2EE2D00FEEEF8 /* BaseWireFrame.swift in Sources */,
-				20D0C45621D2F01000FEEEF8 /* IKDataSource.swift in Sources */,
 				20D0C61C21D34C9F00FEEEF8 /* WS+RoomDeleted.swift in Sources */,
 				44374329017A5CB6F058FE30 /* Registration+DIResolver.swift in Sources */,
 				20D0C32921D2EE2D00FEEEF8 /* BaseNavigationControllerPresenter.swift in Sources */,

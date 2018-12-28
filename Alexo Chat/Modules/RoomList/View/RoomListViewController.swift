@@ -9,29 +9,23 @@
 import UIKit
 import SnapKit
 import DataSources
+import StatusProvider
+import PagingTableView
 
 class RoomListViewController: BaseViewController {
 
     var presenter: RoomListPresenterProtocol!
 
-    private var tableView: UITableView = UITableView()
+    private var tableView: PagingTableView = PagingTableView()
     private var dataController: SectionDataController<CHATModelRoom, TableViewAdapter>!
     private let searchController = UISearchController(searchResultsController: nil)
 
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(ViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        
+        refreshControl.addTarget(self, action: #selector(RoomListViewController.handleRefresh(_:)), for: .valueChanged)
+
         return refreshControl
     }()
-    
-    private var rooms: [CHATModelRoom] = [] {
-        didSet {
-            self.dataController.update(items: self.rooms, updateMode: .partial(animated: true)) {
-                // Completion update
-            }
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +39,14 @@ class RoomListViewController: BaseViewController {
         self.navigationItem.title = "Комнаты"
         self.view.backgroundColor = .white
 
-        let refreshControl = UIRefreshControl()
-        
-        
-        self.tableView.refreshControl = refreshControl
-        navigationItem.searchController = searchController
+        self.tableView.refreshControl = self.refreshControl
+        navigationItem.searchController = self.searchController
         self.searchController.delegate = self
 
         self.dataController = SectionDataController<CHATModelRoom, TableViewAdapter>(adapter: TableViewAdapter(tableView: self.tableView), isEqual: { $0.id == $1.id })
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.pagingDelegate = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "RoomCell")
 
         self.view.addSubview(self.tableView)
@@ -85,7 +77,7 @@ extension RoomListViewController {
     @objc private func createRoomAction(_ sender: UIBarButtonItem) {
 
         self.showAlertController(style: .alert) { alert in
-            
+
             alert.title = "Создание комнаты"
 
             alert.addTextField(configurationHandler: { (tf) in
@@ -105,38 +97,52 @@ extension RoomListViewController {
         }
 
     }
+
+    @objc private func handleRefresh(_ sender: UIRefreshControl) {
+        self.presenter.reloadRooms()
+        self.refreshControl.endRefreshing()
+    }
 }
 
 // MARK: - RoomListViewProtocol
 extension RoomListViewController: RoomListViewProtocol {
 
-    func stopLoadingWithState(_ state: IKTableContentState) {
-//        self.tableController.stopLoading(state: state)
+    func endFetching() {
+        self.tableView.isLoading = false
     }
 
-    func stopLoadingBySearchText(_ text: String?) {
-//        if let text = text, !text.isEmpty {
-//            self.footerContainer.noContentCurtain = IKCurtainView(message: ("Не найдено ни одной комнаты по запросу " + "'" + text + "'"), backgroundColor: ThemeManager.currentTheme().tableBackground)
-//        } else {
-//            self.footerContainer.noContentCurtain = IKCurtainView(message: "Нет ни одной комнаты", backgroundColor: ThemeManager.currentTheme().tableBackground)
-//        }
-//
-//        self.footerContainer.noContentCurtain?.delegate = self.footerContainer.delegate
-//        self.tableController.stopLoading(state: .noContent)
+    func failedLoaded(_ text: String?) {
+        print("show failedLoaded")
     }
 
-    func insertItems(_ items: [CHATModelRoom]) {
-        self.rooms = items
-//        self.dataSource.insertModels(models: items, animated: true)
+    func failedNextPageLoaded(_ text: String?) {
+        print("show failedNextPageLoaded")
     }
 
-    func removeModel() {
-//        self.dataSource.removeModels()
+    func showTableStatus(_ status: StatusModel) {
+        self.show(status: status)
+        self.tableView.isLoading = false
+    }
+
+    func hideTableStatus() {
+        self.hideStatus()
+    }
+
+    func updateItems(_ items: [CHATModelRoom]) {
+        self.hideStatus()
+        
+        self.dataController.update(items: items, updateMode: .partial(animated: true)) {
+            // Completion update
+            self.tableView.isLoading = false
+        }
+        
     }
 
     func reloadPages() {
-        self.removeModel()
-//        self.tableController.stopLoading(state: .success)
+        self.tableView.reset()
+        let status = Status(isLoading: true, description: "Синхронизация...")
+        self.show(status: status)
+        self.presenter.reloadRooms()
     }
 
     func showRoomListAlert() {
@@ -265,13 +271,6 @@ extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
     }
 
-    func pullToRefresh(tableController: IKTableController) {
-        self.presenter.reloadRooms()
-    }
-
-    func fetchNextPage(tableController: IKTableController) {
-        self.presenter.getRooms()
-    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -305,3 +304,10 @@ extension RoomListViewController: UISearchControllerDelegate {
     }
 }
 
+// MARK: - PagingTableViewDelegate
+extension RoomListViewController: PagingTableViewDelegate {
+    func paginate(_ tableView: PagingTableView, to page: Int) {
+        self.tableView.isLoading = true
+        self.presenter.fetchRoomsList(with: page)
+    }
+}

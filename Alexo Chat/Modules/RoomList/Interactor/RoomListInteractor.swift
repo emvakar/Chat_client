@@ -9,7 +9,7 @@
 class RoomListInteractor: BaseInteractor { }
 
 extension RoomListInteractor: RoomListInteractorProtocol {
-
+    
     func registerUser(email: String, password: String, nickname: String, completion: @escaping (Int, CHATModelSignup?, NetworkError?) -> Void) {
 
         self.networkController.registerUser(nickname: nickname, email: email, password: password) { (statusCode, model, error) in
@@ -36,8 +36,8 @@ extension RoomListInteractor: RoomListInteractorProtocol {
         }
     }
 
-    func getRoomsList(completion: @escaping ([CHATModelRoom], NetworkError?) -> Void) {
-        self.networkController.getRooms { (apiModel, error) in
+    func getRoomsList(offset: Int, limit: Int, searchText: String?, completion: @escaping ([CHATModelRoom], NetworkError?) -> Void) {
+        self.networkController.getRooms(offset: offset, limit: limit, searchText: searchText) { (apiModel, error) in
             var roomsModel = [CHATModelRoom]()
             if let models = apiModel {
                 models.forEach { roomsModel.append(CHATModelRoom(from: $0)) }

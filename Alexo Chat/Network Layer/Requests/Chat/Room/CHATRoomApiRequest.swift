@@ -11,6 +11,8 @@ import Foundation
 struct CHATRoomApiRequest: NetworkRequest {
 
     var searchRoomText: String?
+    let offset: Int
+    let limit: Int
 
     var path: String {
         if let searchRoomText = self.searchRoomText {
@@ -24,7 +26,7 @@ struct CHATRoomApiRequest: NetworkRequest {
     }
 
     var params: [String: Any] {
-        return [:]
+        return ["offset": self.offset, "limit": self.limit]
     }
 
     var bodyParams: [String: Any] {

@@ -2,7 +2,7 @@
 //  IKRegexTextViewValidator.swift
 //  Alamofire
 //
-//  Created by Александр on 05/09/2018.
+//  Created by Emil Karimov on 05/09/2018.
 //
 
 import UIKit

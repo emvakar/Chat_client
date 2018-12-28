@@ -8,8 +8,9 @@
 
 import UIKit
 import KRProgressHUD
+import StatusProvider
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, StatusController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
