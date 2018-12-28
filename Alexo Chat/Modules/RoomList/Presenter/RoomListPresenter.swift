@@ -57,7 +57,7 @@ class RoomListPresenter: BasePresenter {
 extension RoomListPresenter: WebSocketEventsDelegate {
 
     func newMessage(payload: MessagePayload) {
-        if payload.type == .group {
+        if payload.type == .group { // FIXME: - Change later to .direct messages type
             self.view?.showBanner(payload: payload)
         }
     }

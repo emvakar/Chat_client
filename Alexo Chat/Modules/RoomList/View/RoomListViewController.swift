@@ -115,10 +115,7 @@ extension RoomListViewController {
 extension RoomListViewController: RoomListViewProtocol {
 
     func showBanner(payload: MessagePayload) {
-        let view = UIView()
-        let avatar = Avatar(payload.fromUser.nickname)
-        let imageView = UIImageView(image: avatar.image)
-        view.addSubview(imageView)
+
         let label = UILabel.makeLabel(size: 13, weight: UIFont.Weight.regular, color: .white)
         label.text = Date().formatHHMM()
         label.textAlignment = .center

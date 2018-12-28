@@ -7,6 +7,7 @@
 //
 
 import MessageKit
+import NotificationBannerSwift
 
 class ChatPresenter: BasePresenter {
 
@@ -31,22 +32,31 @@ class ChatPresenter: BasePresenter {
 
 extension ChatPresenter: WebSocketEventsDelegate {
     func newMessage(payload: MessagePayload) {
-        if payload.room.id == self.room.id {
-            self.interactor.fetchMessages(roomId: payload.room.id, offset: 0, limit: 1) { (apiModels, error) in
-
-                if let error = error {
-                    print(error) // FIXME: - обработать ошибку
-                }
-
-                if let apiModels = apiModels?.sorted(by: { $0.createdAt < $1.createdAt }) {
-                    apiModels.forEach {
-                        let model = CHATModelMessage(from: $0).convert()
-                        self.view?.insertMessage(model)
+        switch payload.type {
+        case .group:
+            if payload.room.id == self.room.id {
+                self.interactor.fetchMessages(roomId: payload.room.id, offset: 0, limit: 1) { (apiModels, error) in
+                    
+                    if let error = error {
+                        print(error) // FIXME: - обработать ошибку
+                    }
+                    
+                    if let apiModels = apiModels?.sorted(by: { $0.createdAt < $1.createdAt }) {
+                        apiModels.forEach {
+                            let model = CHATModelMessage(from: $0).convert()
+                            self.view?.insertMessage(model)
+                        }
                     }
                 }
+            } else {
+                // TODO: - Do anything with another group payload
             }
-        } else {
-            // TODO: - Show notification
+        case .direct:
+            let label = UILabel.makeLabel(size: 13, weight: UIFont.Weight.regular, color: .white)
+            label.text = Date().formatHHMM()
+            label.textAlignment = .left
+            let banner = NotificationBanner(title: payload.fromUser.nickname, subtitle: payload.text, leftView: label, style: BannerStyle.info)
+            banner.show()
         }
     }
 }
