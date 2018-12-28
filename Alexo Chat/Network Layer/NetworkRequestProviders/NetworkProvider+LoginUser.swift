@@ -29,9 +29,8 @@ extension NetworkRequestProvider {
                 let jsonDecoder = JSONDecoder()
                 let models = try jsonDecoder.decode(CHATLoginApiResponse.self, from: data)
                 self.accountManager.refreshBearerToken(token: models.token)
-                self.accountManager.setUserId(userId: models.userID)
-                // TODO: - добавить в ответ username
-//                self.accountManager.setUsername(nickname: models.nickname)
+                self.accountManager.setUserId(userId: models.id)
+                self.accountManager.setUsername(nickname: models.nickname)
                 completion(models, nil)
             } catch let error {
                 let error = NetworkErrorStruct(error: error as NSError)

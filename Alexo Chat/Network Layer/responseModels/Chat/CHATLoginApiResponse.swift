@@ -11,5 +11,6 @@ import Foundation
 struct CHATLoginApiResponse: Codable {
     var id: String
     var token: String
-    var userID: String
+    var nickname: String
+    var isAdmin: Bool
 }

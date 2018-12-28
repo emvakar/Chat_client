@@ -13,13 +13,19 @@ typealias CHATMessagesAPIResponse = [CHATMessageAPIResponse]
 struct CHATMessageAPIResponse: Codable {
     let createdAt, updatedAt: String
     let id, roomID: String
-    let senderID, text: String
+    let text: String
+    let sender: CHATSenderMessageAPIResponse
 
     enum CodingKeys: String, CodingKey {
         case createdAt, id
         case roomID = "roomId"
         case updatedAt
-        case senderID = "senderId"
+        case sender
         case text
     }
 }
+struct CHATSenderMessageAPIResponse: Codable {
+    let id, nickname, updatedAt, createdAt, email: String
+    let isAdmin: Bool
+}
+
