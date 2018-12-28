@@ -14,12 +14,36 @@ struct MessagePayload: Codable {
         case direct, group
     }
 
-    var type: MessageType
+    var type: String
     var fromUser: CHATModelUser.Payload
     var room: CHATRoomAPIResponse
     var text: String
 
-    init (type: MessageType, fromUser: CHATModelUser.Payload, room: CHATRoomAPIResponse, text: String) {
+    enum CodingKeys: String, CodingKey {
+        case type
+        case fromUser
+        case room
+        case text
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(type, forKey: .type)
+        try container.encode(fromUser, forKey: .fromUser)
+        try container.encode(room, forKey: .room)
+        try container.encode(text, forKey: .text)
+        
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        type = try container.decode(String.self, forKey: .type)
+        fromUser = try container.decode(CHATModelUser.Payload.self, forKey: .fromUser)
+        room = try container.decode(CHATRoomAPIResponse.self, forKey: .room)
+        text = try container.decode(String.self, forKey: .text)
+    }
+    
+    init (type: String, fromUser: CHATModelUser.Payload, room: CHATRoomAPIResponse, text: String) {
         self.type = type
         self.fromUser = fromUser
         self.room = room

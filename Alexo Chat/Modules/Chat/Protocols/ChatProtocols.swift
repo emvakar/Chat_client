@@ -13,11 +13,13 @@ protocol ChatViewProtocol: class {
     
     func initWith(_ messages: [MessageModel])
     func insertMore(_ messages: [MessageModel])
+    func insertMessage(_ message: MessageModel)
 }
 
 protocol ChatWireFrameProtocol: class { }
 
 protocol ChatPresenterProtocol: class {
+    func viewDidLoad()
     func fetchMessages()
     func getSender() -> Sender
     func sendMessage(_ messageText: String)

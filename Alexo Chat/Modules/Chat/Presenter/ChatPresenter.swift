@@ -14,20 +14,50 @@ class ChatPresenter: BasePresenter {
     private var wireFrame: ChatWireFrameProtocol
     private var interactor: ChatInteractorProtocol
     private var accountManager: AccountManager
+    private var wsManager: WebSocketManager
     private let room: CHATModelRoom
     private var offset: Int = 0
     private var limit: Int = 20
 
-    init(view: ChatViewProtocol, wireFrame: ChatWireFrameProtocol, interactor: ChatInteractorProtocol, accountManager: AccountManager, room: CHATModelRoom) {
+    init(view: ChatViewProtocol, wireFrame: ChatWireFrameProtocol, interactor: ChatInteractorProtocol, accountManager: AccountManager, wsManager: WebSocketManager, room: CHATModelRoom) {
         self.view = view
         self.interactor = interactor
         self.wireFrame = wireFrame
         self.accountManager = accountManager
+        self.wsManager = wsManager
         self.room = room
+        
+    }
+}
+
+extension ChatPresenter: WebSocketEventsDelegate {
+    func newMessage(to room: CHATRoomAPIResponse, from user: CHATModelUser.Payload, text: String) {
+        guard room.id == self.room.id else { return }
+        self.interactor.fetchMessages(roomId: room.id, offset: 0, limit: self.limit) { (apiModels, error) in
+            
+            if let error = error {
+                print(error) // FIXME: - обработать ошибку
+            }
+            
+            if let apiModels = apiModels?.sorted(by: { $0.createdAt < $1.createdAt }) {
+                apiModels.forEach {
+                    let model = CHATModelMessage(from: $0).convert()
+                    self.view?.insertMessage(model)
+                }
+            }
+            
+        }
+        
     }
 }
 
 extension ChatPresenter: ChatPresenterProtocol {
+    
+    func viewDidLoad() {
+        self.wsManager.connect()
+        self.wsManager.eventDelegate = self
+    }
+    
     func getSender() -> Sender {
         return Sender(id: self.accountManager.getUserId(), displayName: self.accountManager.getUsername())
     }

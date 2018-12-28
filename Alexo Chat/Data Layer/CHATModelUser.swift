@@ -19,6 +19,7 @@ class CHATModelUser: NSObject, NSCoding, Codable {
         var id: String
         var email: String
         var nickname: String
+        var isAdmin: Bool
     }
     
     init(from model: CHATSenderMessageAPIResponse) {

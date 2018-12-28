@@ -37,7 +37,7 @@ class ChatViewController: MessagesViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationItem.largeTitleDisplayMode = .automatic
         self.createUI()
-
+        self.presenter.viewDidLoad()
     }
 
     private func createUI() {
@@ -65,6 +65,9 @@ class ChatViewController: MessagesViewController {
     }
 
     func insertMessage(_ message: MessageModel) {
+
+        guard !(self.messageList.contains(where: { $0.messageId == message.messageId })) else { return }
+
         messageList.append(message)
 
         messagesCollectionView.performBatchUpdates({

@@ -29,8 +29,8 @@ class CHATModelRoom: NSObject, Diffable {
         self.id = model.id
         self.owners = model.owners
         self.members = model.members
-        self.updatedAt = formatter.date(from: model.updatedAt) ?? Date(timeIntervalSince1970: 0)
-        self.createdAt = formatter.date(from: model.createdAt) ?? Date(timeIntervalSince1970: 0)
+        self.updatedAt = formatter.date(from: model.updatedAt ?? "") ?? Date(timeIntervalSince1970: 0)
+        self.createdAt = formatter.date(from: model.createdAt ?? "") ?? Date(timeIntervalSince1970: 0)
         self.type = model.type
         self.name = model.name
     }
