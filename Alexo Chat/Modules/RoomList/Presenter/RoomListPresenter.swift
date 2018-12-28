@@ -15,6 +15,7 @@ class RoomListPresenter: BasePresenter {
     private var wireFrame: RoomListWireFrameProtocol
     private var interactor: RoomListInteractorProtocol
     var accountManager: AccountManager!
+    var wsManager: WebSocketManager!
 
     private let limit: Int = 20
     private var isLoading: Bool = false
@@ -22,7 +23,7 @@ class RoomListPresenter: BasePresenter {
     private var searchText: String? = nil
     private var endFetching: Bool = false
 
-    
+
     private var rooms: [CHATModelRoom] = [] {
         didSet {
             self.view?.updateItems(self.rooms)
@@ -39,11 +40,11 @@ class RoomListPresenter: BasePresenter {
             } else {
                 self.view?.hideTableStatus()
             }
-            
+
         }
     }
 
-    
+
     init(view: RoomListViewProtocol, wireFrame: RoomListWireFrameProtocol, interactor: RoomListInteractorProtocol) {
         self.view = view
         self.interactor = interactor
@@ -52,7 +53,20 @@ class RoomListPresenter: BasePresenter {
 
 }
 
+
+extension RoomListPresenter: WebSocketEventsDelegate {
+
+    func newMessage(payload: MessagePayload) {
+        self.view?.showBanner(payload: payload)
+    }
+
+}
+
 extension RoomListPresenter: RoomListPresenterProtocol {
+
+    func viewDidAppear() {
+        self.wsManager.eventDelegate = self
+    }
 
     func viewDidLoad() {
         if (self.accountManager.getBearerToken().isEmpty) {
@@ -102,13 +116,13 @@ extension RoomListPresenter: RoomListPresenterProtocol {
         self.interactor.getRoomsList(offset: page * self.limit, limit: self.limit, searchText: self.searchText) { (models, error) in
             defer { self.isLoading = false; self.isRefreshing = false }
             if error != nil {
-                
+
                 self.view?.failedLoaded(nil)
                 return
             }
 
             self.rooms.append(contentsOf: models)
-            
+
             if models.count < self.limit {
                 self.view?.endFetching()
             }

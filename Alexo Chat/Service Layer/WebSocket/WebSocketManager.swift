@@ -10,7 +10,7 @@ import Foundation
 import Starscream
 
 protocol WebSocketEventsDelegate: class {
-    func newMessage(to room: CHATRoomAPIResponse, from user: CHATModelUser.Payload, text: String)
+    func newMessage(payload: MessagePayload)
 }
 
 class WebSocketManager {
@@ -114,7 +114,7 @@ extension WebSocketManager: WebSocketDelegate {
             case .message:
                 let event = try decoder.decode(WSEvent<MessagePayload>.self, from: data)
                 guard let payload = event.payload else { return }
-                self.eventDelegate?.newMessage(to: payload.room, from: payload.fromUser, text: payload.text)
+                self.eventDelegate?.newMessage(payload: payload)
             case .messageDeleted:
                 let event = try decoder.decode(WSEvent<MessageDeletedPayload>.self, from: data)
                 print(event)

@@ -11,6 +11,7 @@ import SnapKit
 import DataSources
 import StatusProvider
 import PagingTableView
+import NotificationBannerSwift
 
 class RoomListViewController: BaseViewController {
 
@@ -27,6 +28,11 @@ class RoomListViewController: BaseViewController {
         return refreshControl
     }()
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.presenter.viewDidAppear()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createUI()
@@ -107,6 +113,11 @@ extension RoomListViewController {
 // MARK: - RoomListViewProtocol
 extension RoomListViewController: RoomListViewProtocol {
 
+    func showBanner(payload: MessagePayload) {
+        let banner = NotificationBanner(title: payload.text, subtitle: payload.fromUser.nickname, style: BannerStyle.info)
+        banner.show()
+    }
+    
     func endFetching() {
         self.tableView.isLoading = false
     }

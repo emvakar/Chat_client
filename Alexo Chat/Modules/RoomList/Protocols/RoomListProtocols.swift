@@ -30,6 +30,7 @@ protocol RoomListViewProtocol: class {
     func showHUD(_ message: String)
     func stopHUD()
 
+    func showBanner(payload: MessagePayload)
 }
 
 protocol RoomListWireFrameProtocol: class {
@@ -37,6 +38,7 @@ protocol RoomListWireFrameProtocol: class {
 }
 
 protocol RoomListPresenterProtocol: class {
+    func viewDidAppear()
     func viewDidLoad()
     func registerUser(email: String, password: String, nickname: String)
     func loginUser(email: String, password: String)

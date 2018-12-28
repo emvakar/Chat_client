@@ -30,9 +30,9 @@ class ChatPresenter: BasePresenter {
 }
 
 extension ChatPresenter: WebSocketEventsDelegate {
-    func newMessage(to room: CHATRoomAPIResponse, from user: CHATModelUser.Payload, text: String) {
-        if room.id == self.room.id {
-            self.interactor.fetchMessages(roomId: room.id, offset: 0, limit: 1) { (apiModels, error) in
+    func newMessage(payload: MessagePayload) {
+        if payload.room.id == self.room.id {
+            self.interactor.fetchMessages(roomId: payload.room.id, offset: 0, limit: 1) { (apiModels, error) in
 
                 if let error = error {
                     print(error) // FIXME: - обработать ошибку
