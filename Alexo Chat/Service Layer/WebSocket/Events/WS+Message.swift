@@ -14,7 +14,7 @@ struct MessagePayload: Codable {
         case direct, group
     }
 
-    var type: String
+    var type: MessageType
     var fromUser: CHATModelUser.Payload
     var room: CHATRoomAPIResponse
     var text: String
@@ -37,13 +37,13 @@ struct MessagePayload: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        type = try container.decode(String.self, forKey: .type)
+        type = try container.decode(MessageType.self, forKey: .type)
         fromUser = try container.decode(CHATModelUser.Payload.self, forKey: .fromUser)
         room = try container.decode(CHATRoomAPIResponse.self, forKey: .room)
         text = try container.decode(String.self, forKey: .text)
     }
     
-    init (type: String, fromUser: CHATModelUser.Payload, room: CHATRoomAPIResponse, text: String) {
+    init (type: MessageType, fromUser: CHATModelUser.Payload, room: CHATRoomAPIResponse, text: String) {
         self.type = type
         self.fromUser = fromUser
         self.room = room

@@ -12,6 +12,7 @@ import DataSources
 import StatusProvider
 import PagingTableView
 import NotificationBannerSwift
+import MessageKit
 
 class RoomListViewController: BaseViewController {
 
@@ -114,7 +115,14 @@ extension RoomListViewController {
 extension RoomListViewController: RoomListViewProtocol {
 
     func showBanner(payload: MessagePayload) {
-        let banner = NotificationBanner(title: payload.text, subtitle: payload.fromUser.nickname, style: BannerStyle.info)
+        let view = UIView()
+        let avatar = Avatar(payload.fromUser.nickname)
+        let imageView = UIImageView(image: avatar.image)
+        view.addSubview(imageView)
+        let label = UILabel.makeLabel(size: 13, weight: UIFont.Weight.regular, color: .white)
+        label.text = Date().formatHHMM()
+        label.textAlignment = .center
+        let banner = NotificationBanner(title: payload.fromUser.nickname, subtitle: payload.text, leftView: label, style: BannerStyle.info)
         banner.show()
     }
     

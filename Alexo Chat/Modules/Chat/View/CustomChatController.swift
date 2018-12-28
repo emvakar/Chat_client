@@ -187,21 +187,7 @@ extension CustomChatController: MessagesDisplayDelegate {
     }
 
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        var initials = ""
-        
-        let initialsArray = message.sender.displayName.components(separatedBy: " ")
-        if let firstWord = initialsArray.first {
-            if let firstLetter = firstWord.first {
-                initials += String(firstLetter).capitalized
-            }
-        }
-        if initialsArray.count > 1, let lastWord = initialsArray.last {
-            if let lastLetter = lastWord.first {
-                initials += String(lastLetter).capitalized
-            }
-        }
-
-        let avatar = Avatar(image: nil, initials: initials)
+        let avatar = Avatar(message.sender.displayName)
         avatarView.set(avatar: avatar)
         avatarView.isHidden = isNextMessageSameSender(at: indexPath)
         avatarView.layer.borderWidth = 2

@@ -11,6 +11,7 @@
 		209A04E921D5F9B90015EFC4 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A04E821D5F9B90015EFC4 /* MessageModel.swift */; };
 		209A04EB21D614260015EFC4 /* CustomChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A04EA21D614260015EFC4 /* CustomChatController.swift */; };
 		209A04ED21D614950015EFC4 /* CustomMessageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A04EC21D614950015EFC4 /* CustomMessageFlowLayout.swift */; };
+		209A04EF21D63EE70015EFC4 /* Avatar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A04EE21D63EE70015EFC4 /* Avatar+Extension.swift */; };
 		20A119BC21D2BB4D0050656A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A119BB21D2BB4D0050656A /* AppDelegate.swift */; };
 		20A119C321D2BB500050656A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A119C221D2BB500050656A /* Assets.xcassets */; };
 		20A119C621D2BB500050656A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A119C421D2BB500050656A /* LaunchScreen.storyboard */; };
@@ -194,6 +195,7 @@
 		209A04E821D5F9B90015EFC4 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		209A04EA21D614260015EFC4 /* CustomChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChatController.swift; sourceTree = "<group>"; };
 		209A04EC21D614950015EFC4 /* CustomMessageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageFlowLayout.swift; sourceTree = "<group>"; };
+		209A04EE21D63EE70015EFC4 /* Avatar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Extension.swift"; sourceTree = "<group>"; };
 		20A119B821D2BB4D0050656A /* Alexo Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alexo Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A119BB21D2BB4D0050656A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20A119C221D2BB500050656A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -850,6 +852,7 @@
 			isa = PBXGroup;
 			children = (
 				20D0C3AA21D2F01000FEEEF8 /* IKUILabelExtension.swift */,
+				209A04EE21D63EE70015EFC4 /* Avatar+Extension.swift */,
 				20D0C3AB21D2F01000FEEEF8 /* IKDate+Extension.swift */,
 				20D0C3AC21D2F01000FEEEF8 /* UITableViewCell+Identifier.swift */,
 				20D0C3AD21D2F01000FEEEF8 /* UIView+Extension.swift */,
@@ -1478,6 +1481,7 @@
 				493375D7C074EE1F7A831A96 /* RoomListInteractor.swift in Sources */,
 				92F6D269EB14A0A1DCD3F3DE /* RoomListProtocols.swift in Sources */,
 				20D0C43D21D2F01000FEEEF8 /* IKSearchBarView.swift in Sources */,
+				209A04EF21D63EE70015EFC4 /* Avatar+Extension.swift in Sources */,
 				20D0C41521D2F01000FEEEF8 /* TKRegexTextViewValidator.swift in Sources */,
 				20D0C41D21D2F01000FEEEF8 /* IKBaseSegmentedViewController.swift in Sources */,
 				20D0C41621D2F01000FEEEF8 /* TKEmailTextViewValidator.swift in Sources */,

@@ -57,7 +57,9 @@ class RoomListPresenter: BasePresenter {
 extension RoomListPresenter: WebSocketEventsDelegate {
 
     func newMessage(payload: MessagePayload) {
-        self.view?.showBanner(payload: payload)
+        if payload.type == .group {
+            self.view?.showBanner(payload: payload)
+        }
     }
 
 }
