@@ -11,9 +11,9 @@ import Foundation
 struct RoomMemberAddedPayload: Codable {
 
     var roomId: String
-    var member: User.Payload
+    var member: CHATModelUser.Payload
 
-    init (roomId: String, member: User.Payload) {
+    init (roomId: String, member: CHATModelUser.Payload) {
         self.roomId = roomId
         self.member = member
     }

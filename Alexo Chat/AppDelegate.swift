@@ -24,16 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
-        UserDefaults.standard.synchronize()
-
+//        let domain = Bundle.main.bundleIdentifier!
+//        UserDefaults.standard.removePersistentDomain(forName: domain)
+//        UserDefaults.standard.synchronize()
+        UINavigationBar.appearance().prefersLargeTitles = true
+        
         let networkWrapper = NetworkRequestWrapper()
 
         self.networkProvider = NetworkRequestProvider(networkWrapper: networkWrapper, tokenRefresher: nil, accountManager: self.accountManager, websocketManager: self.websocketManager)
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let resolver = DIResolver(networkController: self.networkProvider, accountManager: self.accountManager)
+        let resolver = DIResolver(networkController: self.networkProvider, accountManager: self.accountManager, webSocketManager: self.websocketManager)
         self.window?.rootViewController = UINavigationController(rootViewController: resolver.presentRoomListViewController())
 
         self.window?.makeKeyAndVisible()

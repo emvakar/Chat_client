@@ -12,9 +12,9 @@ protocol NetworkMessangerRequestProtocol {
     func registerUser(nickname: String, email: String, password: String, completion: @escaping(Int, CHATSignupApiResponse?, NetworkError?) -> Void)
     func loginUser(email: String, password: String, completion: @escaping(CHATLoginApiResponse?, NetworkError?) -> Void)
 
-    func getRooms(completion: @escaping(CHATRoomsAPIResponse?, NetworkError?) -> Void)
+    func getRooms(offset: Int, limit: Int, searchText: String?, completion: @escaping(CHATRoomsAPIResponse?, NetworkError?) -> Void)
     func inviteUser(to roomId: String, userId: String, completion: @escaping(NetworkError?) -> Void)
-    func getMessages(from roomId: String, completion: @escaping(CHATMessagesAPIResponse?, NetworkError?) -> Void)
+    func getMessages(from roomId: String, offset: Int, limit: Int, completion: @escaping(CHATMessagesAPIResponse?, NetworkError?) -> Void)
     func sendMessage(to roomId: String, text: String, completion: @escaping(CHATMessageAPIResponse?, NetworkError?) -> Void)
     func sendMessage(toUser id: String, text: String, completion: @escaping(CHATMessageAPIResponse?, NetworkError?) -> Void)
 

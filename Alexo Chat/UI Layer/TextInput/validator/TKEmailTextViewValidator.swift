@@ -2,7 +2,7 @@
 //  IKEmailTextViewValidator.swift
 //  IKInterfaceSwift
 //
-//  Created by Yuriy Kolbasinskiy on 23/08/2018.
+//  Created by Emil Karimov on 23/08/2018.
 //  Copyright © 2018 TAXCOM. All rights reserved.
 //
 

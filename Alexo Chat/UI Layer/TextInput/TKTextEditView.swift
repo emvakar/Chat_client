@@ -2,7 +2,7 @@
 //  IKTextEditView.swift
 //  IKInterfaceSwift
 //
-//  Created by admin on 14.09.2018.
+//  Created by Emil Karimov on 14.09.2018.
 //  Copyright © 2018 TAXCOM. All rights reserved.
 //
 

@@ -11,6 +11,7 @@ import UIKit
 class LetterImageGenerator: NSObject {
 
     class func imageWith(name: String?) -> UIImage? {
+
         let frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         let nameLabel = UILabel(frame: frame)
         nameLabel.textAlignment = .center
@@ -32,6 +33,7 @@ class LetterImageGenerator: NSObject {
         } else {
             return nil
         }
+
         nameLabel.text = initials
         UIGraphicsBeginImageContext(frame.size)
         if let currentContext = UIGraphicsGetCurrentContext() {

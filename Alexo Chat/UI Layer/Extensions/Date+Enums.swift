@@ -249,7 +249,7 @@ extension Date {
         return fr
     }
 
-    func formatHHMM(systemTZ: Bool = false) -> String {
+    func formatHHMM(systemTZ: Bool = true) -> String {
         let formatter = systemTZ ? Date.timeFormatter : Date.timeUTCFormatter
         return formatter.string(from: self)
     }

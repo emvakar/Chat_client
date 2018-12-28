@@ -10,7 +10,9 @@ import Foundation
 
 struct CHATMessagesApiRequest: NetworkRequest {
 
-    var roomId: String
+    let roomId: String
+    let offset: Int
+    let limit: Int
 
     var path: String { return "/messages/\(self.roomId)" }
 
@@ -19,7 +21,7 @@ struct CHATMessagesApiRequest: NetworkRequest {
     }
 
     var params: [String: Any] {
-        return [:]
+        return ["offset": self.offset, "limit": self.limit]
     }
 
     var bodyParams: [String: Any] {

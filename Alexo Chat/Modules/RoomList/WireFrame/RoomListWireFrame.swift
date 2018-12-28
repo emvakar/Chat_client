@@ -15,7 +15,7 @@ class RoomListWireFrame: BaseWireFrame {
 extension RoomListWireFrame: RoomListWireFrameProtocol {
     func presentRoomController(from view: RoomListViewProtocol?, room: CHATModelRoom) {
         guard let fromView = view as? UIViewController else { return }
-        let viewController = self.resolver.presentMessagesViewController(room: room)
+        let viewController = self.resolver.presentChatViewController(room: room)
         viewController.navigationItem.title = room.name
         fromView.navigationController?.pushViewController(viewController, animated: true)
     }

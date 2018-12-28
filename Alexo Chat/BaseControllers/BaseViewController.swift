@@ -8,8 +8,9 @@
 
 import UIKit
 import KRProgressHUD
+import StatusProvider
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, StatusController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,6 +26,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.setNeedsStatusBarAppearanceUpdate()
 
     }

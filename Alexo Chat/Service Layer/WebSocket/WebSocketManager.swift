@@ -9,10 +9,16 @@
 import Foundation
 import Starscream
 
+protocol WebSocketEventsDelegate: class {
+    func newMessage(payload: MessagePayload)
+}
+
 class WebSocketManager {
 
     private var environmet: Environmet
     private var socket: WebSocket?
+    weak var eventDelegate: WebSocketEventsDelegate?
+
     private var isConnected: Bool = false {
         didSet {
             if !self.isConnected {
@@ -95,34 +101,35 @@ extension WebSocketManager: WebSocketDelegate {
             switch eventType {
             case .addedToRoom:
                 let event = try decoder.decode(WSEvent<AddedToRoomPayload>.self, from: data)
-
+                print(event)
             case .joinedRoom:
                 let event = try decoder.decode(WSEvent<JoinedRoomPayload>.self, from: data)
-
+                print(event)
             case .leftRoom:
                 let event = try decoder.decode(WSEvent<LeftRoomPayload>.self, from: data)
-
+                print(event)
             case .roomMemberAdded:
                 let event = try decoder.decode(WSEvent<RoomMemberAddedPayload>.self, from: data)
-
+                print(event)
             case .message:
                 let event = try decoder.decode(WSEvent<MessagePayload>.self, from: data)
-
+                guard let payload = event.payload else { return }
+                self.eventDelegate?.newMessage(payload: payload)
             case .messageDeleted:
                 let event = try decoder.decode(WSEvent<MessageDeletedPayload>.self, from: data)
-
+                print(event)
             case .messageEdited:
                 let event = try decoder.decode(WSEvent<MessageEditedPayload>.self, from: data)
-
+                print(event)
             case .roomCreated:
                 let event = try decoder.decode(WSEvent<RoomCreatedPayload>.self, from: data)
-
+                print(event)
             case .roomDeleted:
                 let event = try decoder.decode(WSEvent<RoomDeletedPayload>.self, from: data)
-
+                print(event)
             case .typing:
                 let event = try decoder.decode(WSEvent<TypingPayload>.self, from: data)
-
+                print(event)
             }
         } catch {
             print(error.localizedDescription)

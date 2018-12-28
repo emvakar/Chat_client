@@ -11,8 +11,8 @@ import Foundation
 // MARK: - User Methods
 extension NetworkRequestProvider {
 
-    func getRooms(completion: @escaping (CHATRoomsAPIResponse?, NetworkError?) -> Void) {
-        let request = CHATRoomApiRequest()
+    func getRooms(offset: Int, limit: Int, searchText: String?, completion: @escaping (CHATRoomsAPIResponse?, NetworkError?) -> Void) {
+        let request = CHATRoomApiRequest(searchRoomText: searchText, offset: offset, limit: limit)
 
         self.runRequest(request, progressResult: nil) { (_, data, error) in
             if let error = error {

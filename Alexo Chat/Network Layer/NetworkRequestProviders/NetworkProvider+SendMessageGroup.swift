@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - User Methods
 extension NetworkRequestProvider {
-    
+
     func sendMessage(to roomId: String, text: String, completion: @escaping (CHATMessageAPIResponse?, NetworkError?) -> Void) {
         let request = CHATMessageSendRoomApiRequest(roomId: roomId, text: text)
 

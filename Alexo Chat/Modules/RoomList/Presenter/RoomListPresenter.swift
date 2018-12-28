@@ -7,6 +7,7 @@
 //
 
 import Starscream
+import StatusProvider
 
 class RoomListPresenter: BasePresenter {
 
@@ -14,6 +15,35 @@ class RoomListPresenter: BasePresenter {
     private var wireFrame: RoomListWireFrameProtocol
     private var interactor: RoomListInteractorProtocol
     var accountManager: AccountManager!
+    var wsManager: WebSocketManager!
+
+    private let limit: Int = 20
+    private var isLoading: Bool = false
+    private var isRefreshing: Bool = false
+    private var searchText: String? = nil
+    private var endFetching: Bool = false
+
+
+    private var rooms: [CHATModelRoom] = [] {
+        didSet {
+            self.view?.updateItems(self.rooms)
+            if self.rooms.isEmpty {
+                if !oldValue.isEmpty {
+                    self.view?.hideTableStatus()
+                    return
+                }
+                let status = Status(isLoading: false, title: "Нет ни одной комнаты", description: nil, actionTitle: "Создать", image: UIImage(named: "Icon")) {
+                    self.reloadRooms()
+                }
+                self.view?.showTableStatus(status)
+                return
+            } else {
+                self.view?.hideTableStatus()
+            }
+
+        }
+    }
+
 
     init(view: RoomListViewProtocol, wireFrame: RoomListWireFrameProtocol, interactor: RoomListInteractorProtocol) {
         self.view = view
@@ -23,7 +53,22 @@ class RoomListPresenter: BasePresenter {
 
 }
 
+
+extension RoomListPresenter: WebSocketEventsDelegate {
+
+    func newMessage(payload: MessagePayload) {
+        if payload.type == .group { // FIXME: - Change later to .direct messages type
+            self.view?.showBanner(payload: payload)
+        }
+    }
+
+}
+
 extension RoomListPresenter: RoomListPresenterProtocol {
+
+    func viewDidAppear() {
+        self.wsManager.eventDelegate = self
+    }
 
     func viewDidLoad() {
         if (self.accountManager.getBearerToken().isEmpty) {
@@ -64,27 +109,33 @@ extension RoomListPresenter: RoomListPresenterProtocol {
         })
     }
 
-    func getRooms() {
+    func fetchRoomsList(with page: Int) {
 
-        self.interactor.getRoomsList { (models, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                self.view?.removeModel()
-                self.view?.stopLoadingWithState(IKTableContentState.failedLoaded)
+        guard !isLoading else { return }
+        self.isLoading = true
+        if page == 0 && !self.isRefreshing { self.view?.showTableStatus(Status(isLoading: true)) }
+
+        self.interactor.getRoomsList(offset: page * self.limit, limit: self.limit, searchText: self.searchText) { (models, error) in
+            defer { self.isLoading = false; self.isRefreshing = false }
+            if error != nil {
+
+                self.view?.failedLoaded(nil)
                 return
             }
-            if !models.isEmpty {
-                self.view?.insertItems(models)
-                self.view?.stopLoadingWithState(.success)
-            } else {
-                self.view?.stopLoadingWithState(.noContent)
+
+            self.rooms.append(contentsOf: models)
+
+            if models.count < self.limit {
+                self.view?.endFetching()
             }
         }
     }
 
     func reloadRooms() {
-        self.view?.removeModel()
-        self.getRooms()
+
+        self.isRefreshing = true
+        self.rooms.removeAll()
+        self.fetchRoomsList(with: 0)
 
     }
 
