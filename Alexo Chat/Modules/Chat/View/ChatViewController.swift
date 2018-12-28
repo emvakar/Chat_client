@@ -33,6 +33,7 @@ class ChatViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationItem.largeTitleDisplayMode = .automatic
         self.createUI()
@@ -47,9 +48,6 @@ class ChatViewController: MessagesViewController {
 
     func configureMessageCollectionView() {
 
-        messagesCollectionView.messagesLayoutDelegate = self
-        messagesCollectionView.messagesDisplayDelegate = self
-
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messageCellDelegate = self
 
@@ -63,12 +61,12 @@ class ChatViewController: MessagesViewController {
     func configureMessageInputBar() {
         messageInputBar.delegate = self
         messageInputBar.inputTextView.tintColor = .black
-        messageInputBar.sendButton.tintColor = .blue
+        messageInputBar.sendButton.tintColor = UIColor(hue: 0.58, saturation: 0.81, brightness: 0.95, alpha: 1.00)
     }
 
     func insertMessage(_ message: MessageModel) {
         messageList.append(message)
-        // Reload last section to update header/footer labels and insert a new one
+
         messagesCollectionView.performBatchUpdates({
             messagesCollectionView.insertSections([messageList.count - 1])
             if messageList.count >= 2 {
@@ -110,12 +108,6 @@ class ChatViewController: MessagesViewController {
     @objc func loadMoreMessages() {
         self.presenter.fetchMessages()
     }
-}
-extension ChatViewController: ChatViewProtocol { }
-extension ChatViewController: MessagesDataSource {
-    func currentSender() -> Sender {
-        return self.presenter.getSender()
-    }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messageList.count
@@ -126,8 +118,6 @@ extension ChatViewController: MessagesDataSource {
     }
 
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        
-//        if message.sentDate.isSameDate(<#T##comparisonDate: Date##Date#>)
         if indexPath.section % 3 == 0 {
             return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate), attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         }
@@ -144,6 +134,16 @@ extension ChatViewController: MessagesDataSource {
         let dateString = formatter.string(from: message.sentDate)
         return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }
+}
+
+extension ChatViewController: ChatViewProtocol { }
+
+extension ChatViewController: MessagesDataSource {
+
+    func currentSender() -> Sender {
+        return self.presenter.getSender()
+    }
+
 }
 
 // MARK: - MessageCellDelegate
@@ -180,23 +180,23 @@ extension ChatViewController: MessageCellDelegate {
 extension ChatViewController: MessageLabelDelegate {
 
     func didSelectAddress(_ addressComponents: [String: String]) {
-        print("Address Selected: \(addressComponents)")
+
     }
 
     func didSelectDate(_ date: Date) {
-        print("Date Selected: \(date)")
+
     }
 
     func didSelectPhoneNumber(_ phoneNumber: String) {
-        print("Phone Number Selected: \(phoneNumber)")
+
     }
 
     func didSelectURL(_ url: URL) {
-        print("URL Selected: \(url)")
+
     }
 
     func didSelectTransitInformation(_ transitInformation: [String: String]) {
-        print("TransitInformation Selected: \(transitInformation)")
+
     }
 
 }
@@ -219,85 +219,9 @@ extension ChatViewController: MessageInputBarDelegate {
             }
 
         }
+
         inputBar.inputTextView.text = String()
         messagesCollectionView.scrollToBottom(animated: true)
-    }
-
-}
-
-// MARK: - MessagesDisplayDelegate
-extension ChatViewController: MessagesDisplayDelegate {
-
-    // MARK: - Text Messages
-
-    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .white : .darkText
-    }
-
-    func detectorAttributes(for detector: DetectorType, and message: MessageType, at indexPath: IndexPath) -> [NSAttributedString.Key: Any] {
-        return MessageLabel.defaultAttributes
-    }
-
-    func enabledDetectors(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> [DetectorType] {
-        return [.url, .address, .phoneNumber, .date, .transitInformation]
-    }
-
-    // MARK: - All Messages
-
-    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .blue : UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
-    }
-
-    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-
-        let tail: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
-        return .bubbleTail(tail, .curved)
-    }
-
-    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-//        let avatar = SampleData.shared.getAvatarFor(sender: message.sender)
-//        avatarView.set(avatar: avatar)
-    }
-
-    // MARK: - Location Messages
-
-//    func annotationViewForLocation(message: MessageType, at indexPath: IndexPath, in messageCollectionView: MessagesCollectionView) -> MKAnnotationView? {
-//        let annotationView = MKAnnotationView(annotation: nil, reuseIdentifier: nil)
-//        let pinImage = #imageLiteral(resourceName: "ic_map_marker")
-//        annotationView.image = pinImage
-//        annotationView.centerOffset = CGPoint(x: 0, y: -pinImage.size.height / 2)
-//        return annotationView
-//    }
-
-    func animationBlockForLocation(message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> ((UIImageView) -> Void)? {
-        return { view in
-            view.layer.transform = CATransform3DMakeScale(2, 2, 2)
-            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: [], animations: {
-                    view.layer.transform = CATransform3DIdentity
-                }, completion: nil)
-        }
-    }
-
-//    func snapshotOptionsForLocation(message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> LocationMessageSnapshotOptions {
-//
-//        return LocationMessageSnapshotOptions(showsBuildings: true, showsPointsOfInterest: true, span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
-//    }
-
-}
-
-// MARK: - MessagesLayoutDelegate
-extension ChatViewController: MessagesLayoutDelegate {
-
-    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 18
-    }
-
-    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 20
-    }
-
-    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 16
     }
 
 }

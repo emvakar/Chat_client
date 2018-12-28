@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		172A54F528DFF6BE215615A8 /* ChatWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15793E39FD492D22FF93D811 /* ChatWireFrame.swift */; };
 		209A04E921D5F9B90015EFC4 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A04E821D5F9B90015EFC4 /* MessageModel.swift */; };
+		209A04EB21D614260015EFC4 /* CustomChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A04EA21D614260015EFC4 /* CustomChatController.swift */; };
+		209A04ED21D614950015EFC4 /* CustomMessageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A04EC21D614950015EFC4 /* CustomMessageFlowLayout.swift */; };
 		20A119BC21D2BB4D0050656A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A119BB21D2BB4D0050656A /* AppDelegate.swift */; };
 		20A119C321D2BB500050656A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A119C221D2BB500050656A /* Assets.xcassets */; };
 		20A119C621D2BB500050656A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A119C421D2BB500050656A /* LaunchScreen.storyboard */; };
@@ -190,6 +192,8 @@
 		15793E39FD492D22FF93D811 /* ChatWireFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatWireFrame.swift; sourceTree = "<group>"; };
 		1963D16019D7DD6082FF755F /* Pods_Alexo_ChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alexo_ChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		209A04E821D5F9B90015EFC4 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		209A04EA21D614260015EFC4 /* CustomChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChatController.swift; sourceTree = "<group>"; };
+		209A04EC21D614950015EFC4 /* CustomMessageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageFlowLayout.swift; sourceTree = "<group>"; };
 		20A119B821D2BB4D0050656A /* Alexo Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alexo Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A119BB21D2BB4D0050656A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20A119C221D2BB500050656A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -977,6 +981,8 @@
 			isa = PBXGroup;
 			children = (
 				9117F3A631DC3B67485152DF /* ChatViewController.swift */,
+				209A04EA21D614260015EFC4 /* CustomChatController.swift */,
+				209A04EC21D614950015EFC4 /* CustomMessageFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1362,6 +1368,7 @@
 			files = (
 				20D0C42C21D2F01000FEEEF8 /* UIViewController+Extension.swift in Sources */,
 				20D0C42D21D2F01000FEEEF8 /* IKUIColorExtension.swift in Sources */,
+				209A04EB21D614260015EFC4 /* CustomChatController.swift in Sources */,
 				20D0C62021D34C9F00FEEEF8 /* WS+LeftRoom.swift in Sources */,
 				20D0C63521D39C5A00FEEEF8 /* CHATMessagesApiRequest.swift in Sources */,
 				20D0C29421D2EA9100FEEEF8 /* NetworkTarget.swift in Sources */,
@@ -1434,6 +1441,7 @@
 				20D0C29721D2EA9100FEEEF8 /* AuthTokenRefresher.swift in Sources */,
 				20D0C42421D2F01000FEEEF8 /* IKUILabelExtension.swift in Sources */,
 				20D0C44521D2F01000FEEEF8 /* IKToastView.swift in Sources */,
+				209A04ED21D614950015EFC4 /* CustomMessageFlowLayout.swift in Sources */,
 				20D0C33321D2EE2D00FEEEF8 /* BaseTabBarControllerPresenter.swift in Sources */,
 				20D0C2DE21D2EB6F00FEEEF8 /* CHATRoomApiRequest.swift in Sources */,
 				20D0C2E021D2EB6F00FEEEF8 /* CHATUserLoginApiRequest.swift in Sources */,

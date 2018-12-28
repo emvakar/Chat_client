@@ -15,7 +15,7 @@ protocol ChatProtocol {
 
 extension DIResolver: ChatProtocol {
     func presentChatViewController(room: CHATModelRoom) -> UIViewController {
-        let viewController = ChatViewController()
+        let viewController = CustomChatController()
         let interactor = ChatInteractor(networkController: self.networkController)
         let wireFrame = ChatWireFrame(resolver: self)
         let presenter = ChatPresenter(view: viewController, wireFrame: wireFrame, interactor: interactor, accountManager: self.accountManager, room: room)
