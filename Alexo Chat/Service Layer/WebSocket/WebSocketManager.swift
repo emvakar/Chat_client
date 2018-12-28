@@ -66,7 +66,7 @@ extension WebSocketManager {
 // MARK: - Private
 extension WebSocketManager {
     private func getBearerToken() -> String? {
-        return UserDefaults.standard.string(forKey: DefaultsKeys.user_token)
+        return UserDefaults.standard.string(forKey: DefaultsKeys.bearer_token)
     }
 }
 
