@@ -8,7 +8,7 @@
 
 import Foundation
 import DataSources
-import MessengerKit
+import MessageKit
 
 class CHATModelMessage: Diffable {
     
@@ -32,12 +32,9 @@ class CHATModelMessage: Diffable {
         self.createdAt = formatter.date(from: model.createdAt) ?? Date(timeIntervalSince1970: 0)
     }
 
-    func convert() -> MSGMessage {
-
-        let user = User(id: self.sender.id, displayName: self.sender.nickname)
-        let body = MSGMessageBody.text(self.text)
-        let message = MSGMessage(id: self.id, body: body, user: user, sentAt: self.createdAt)
-
+    func convert() -> MessageModel {
+        let sender = Sender(id: self.sender.id, displayName: self.sender.nickname)
+        let message = MessageModel(text: self.text, sender: sender, messageId: self.id, date: self.createdAt)
         return message
     }
 }

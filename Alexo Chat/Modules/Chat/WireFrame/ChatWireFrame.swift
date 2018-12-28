@@ -1,21 +1,21 @@
 //
-//  MessagesWireFrame.swift
+//  ChatWireFrame.swift
 //  Alexo Chat
 //
-//  Created by Emil Karimov on 26/12/2018.
+//  Created by Emil Karimov on 28/12/2018.
 //  Copyright © 2018 Emil Karimov. All rights reserved.
 //
 
 import UIKit
 
-class MessagesWireFrame: BaseWireFrame {
-    //func presentSomeViewController(from view: MessagesViewProtocol) {
+class ChatWireFrame: BaseWireFrame {
+    //func presentSomeViewController(from view: ChatViewProtocol) {
     //    guard let fromView = view as? UIViewController else { return }
     //    let viewController = self.resolver.someViewController()
     //    fromView.navigationController?.pushViewController(viewController, animated: true)
     //}
 }
 
-extension MessagesWireFrame: MessagesWireFrameProtocol {
+extension ChatWireFrame: ChatWireFrameProtocol {
 
 }

@@ -11,8 +11,8 @@ import Foundation
 // MARK: - User Methods
 extension NetworkRequestProvider {
 
-    func getMessages(from roomId: String, completion: @escaping (CHATMessagesAPIResponse?, NetworkError?) -> Void) {
-        let request = CHATMessagesApiRequest(roomId: roomId)
+    func getMessages(from roomId: String, offset: Int, limit: Int, completion: @escaping (CHATMessagesAPIResponse?, NetworkError?) -> Void) {
+        let request = CHATMessagesApiRequest(roomId: roomId, offset: offset, limit: limit)
 
         self.runRequest(request, progressResult: nil) { (_, data, error) in
             if let error = error {

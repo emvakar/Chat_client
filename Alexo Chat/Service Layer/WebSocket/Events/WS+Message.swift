@@ -15,11 +15,11 @@ struct MessagePayload: Codable {
     }
 
     var type: MessageType
-    var fromUser: User.Payload
+    var fromUser: CHATModelUser.Payload
     var room: CHATRoomAPIResponse
     var text: String
 
-    init (type: MessageType, fromUser: User.Payload, room: CHATRoomAPIResponse, text: String) {
+    init (type: MessageType, fromUser: CHATModelUser.Payload, room: CHATRoomAPIResponse, text: String) {
         self.type = type
         self.fromUser = fromUser
         self.room = room
