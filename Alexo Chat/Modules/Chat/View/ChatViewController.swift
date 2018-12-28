@@ -127,7 +127,7 @@ extension ChatViewController: MessagesDataSource {
 
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         
-        if message.sentDate.isSameDate(<#T##comparisonDate: Date##Date#>)
+//        if message.sentDate.isSameDate(<#T##comparisonDate: Date##Date#>)
         if indexPath.section % 3 == 0 {
             return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate), attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         }
