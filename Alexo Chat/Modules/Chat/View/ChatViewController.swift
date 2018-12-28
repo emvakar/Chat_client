@@ -66,7 +66,7 @@ class ChatViewController: MessagesViewController {
 
     func insertMessage(_ message: MessageModel) {
 
-        guard !(self.messageList.contains(where: { $0.messageId == message.messageId })) else { return }
+        guard !(self.messageList.contains(where: { $0.messageId == message.messageId && $0.sender.id != message.sender.id })) else { return }
 
         messageList.append(message)
 
@@ -214,8 +214,8 @@ extension ChatViewController: MessageInputBarDelegate {
 
             if let str = component as? String {
                 self.presenter.sendMessage(str)
-                let message = MessageModel(text: str, sender: currentSender(), messageId: UUID().uuidString, date: Date())
-                insertMessage(message)
+//                let message = MessageModel(text: str, sender: currentSender(), messageId: UUID().uuidString, date: Date())
+//                insertMessage(message)
             } else if let img = component as? UIImage {
                 let message = MessageModel(image: img, sender: currentSender(), messageId: UUID().uuidString, date: Date())
                 insertMessage(message)

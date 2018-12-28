@@ -26,38 +26,38 @@ class ChatPresenter: BasePresenter {
         self.accountManager = accountManager
         self.wsManager = wsManager
         self.room = room
-        
     }
 }
 
 extension ChatPresenter: WebSocketEventsDelegate {
     func newMessage(to room: CHATRoomAPIResponse, from user: CHATModelUser.Payload, text: String) {
-        guard room.id == self.room.id else { return }
-        self.interactor.fetchMessages(roomId: room.id, offset: 0, limit: self.limit) { (apiModels, error) in
-            
-            if let error = error {
-                print(error) // FIXME: - обработать ошибку
-            }
-            
-            if let apiModels = apiModels?.sorted(by: { $0.createdAt < $1.createdAt }) {
-                apiModels.forEach {
-                    let model = CHATModelMessage(from: $0).convert()
-                    self.view?.insertMessage(model)
+        if room.id == self.room.id {
+            self.interactor.fetchMessages(roomId: room.id, offset: 0, limit: 1) { (apiModels, error) in
+
+                if let error = error {
+                    print(error) // FIXME: - обработать ошибку
+                }
+
+                if let apiModels = apiModels?.sorted(by: { $0.createdAt < $1.createdAt }) {
+                    apiModels.forEach {
+                        let model = CHATModelMessage(from: $0).convert()
+                        self.view?.insertMessage(model)
+                    }
                 }
             }
-            
+        } else {
+            // TODO: - Show notification
         }
-        
     }
 }
 
 extension ChatPresenter: ChatPresenterProtocol {
-    
+
     func viewDidLoad() {
         self.wsManager.connect()
         self.wsManager.eventDelegate = self
     }
-    
+
     func getSender() -> Sender {
         return Sender(id: self.accountManager.getUserId(), displayName: self.accountManager.getUsername())
     }
