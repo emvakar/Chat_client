@@ -37,8 +37,8 @@ extension WebSocketManager {
     /// Websocket url
     func getBaseUrl() -> String {
         switch environmet {
-        case .develop: return "ws://192.168.100.2:8080/ws"
-        case .production: return "ws://127.0.0.1:8080/ws"
+        case .develop: return "wss://stage.chat.eskaria.com/ws"
+        case .production: return "wss://chat.eskaria.com/ws"
         case .local: return "ws://127.0.0.1:8080/ws"
         }
     }

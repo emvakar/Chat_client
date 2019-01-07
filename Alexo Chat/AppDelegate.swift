@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let accountManager = AccountManager(environmet: .develop)
-    let websocketManager = WebSocketManager(environmet: .develop)
+    let accountManager = AccountManager(environmet: .production)
+    let websocketManager = WebSocketManager(environmet: .production)
 
     var networkProvider: NetworkRequestProvider! = nil
 
