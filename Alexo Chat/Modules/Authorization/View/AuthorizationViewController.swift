@@ -27,8 +27,8 @@ class AuthorizationViewController: BaseViewController {
 
     private func createUI() {
 
-        self.loginTextField.text = "test@test.com"
-        self.passwordTextField.text = "password"
+        self.loginTextField.text = "emvakar@gmail.com"
+        self.passwordTextField.text = "M8DyyeLnWLV2adNAYUmMB6AzV4F2"
         
         loginTextField.placeholder = "Email"
         loginTextField.layer.borderWidth = 1.0

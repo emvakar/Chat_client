@@ -29,7 +29,7 @@ extension AuthorizationPresenter: AuthorizationPresenterProtocol {
         self.interactor.registerUser(email: email, password: password, nickname: nickname) { (statusCode, model, error) in
             if let error = error {
                 print(error)
-                if statusCode == 500 && (error.detailMessage ?? "").contains("uq:User.email") {
+                if statusCode == 500 {
                     self.loginUser(email: email, password: password)
                     return
                 }
