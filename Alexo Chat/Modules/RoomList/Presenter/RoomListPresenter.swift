@@ -62,6 +62,9 @@ extension RoomListPresenter: WebSocketEventsDelegate {
         }
     }
 
+    func typing(from user: CHATModelUser.Payload, to roomId: String, isTyping: Bool) {
+        
+    }
 }
 
 extension RoomListPresenter: RoomListPresenterProtocol {

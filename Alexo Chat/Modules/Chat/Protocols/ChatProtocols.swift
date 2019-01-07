@@ -14,6 +14,7 @@ protocol ChatViewProtocol: class {
     func initWith(_ messages: [MessageModel])
     func insertMore(_ messages: [MessageModel])
     func insertMessage(_ message: MessageModel)
+    func updateTypingLabel(with title: String, subtitle: String)
 }
 
 protocol ChatWireFrameProtocol: class { }

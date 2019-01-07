@@ -12,13 +12,14 @@ class StringKeys {
     static let selectedThemeKey = "com.eskaria.alexo.selectedTheme"
 }
 
+let websocketManager = WebSocketManager(environmet: .production)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     let accountManager = AccountManager(environmet: .production)
-    let websocketManager = WebSocketManager(environmet: .production)
 
     var networkProvider: NetworkRequestProvider! = nil
 
@@ -31,10 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let networkWrapper = NetworkRequestWrapper()
 
-        self.networkProvider = NetworkRequestProvider(networkWrapper: networkWrapper, tokenRefresher: nil, accountManager: self.accountManager, websocketManager: self.websocketManager)
+        self.networkProvider = NetworkRequestProvider(networkWrapper: networkWrapper, tokenRefresher: nil, accountManager: self.accountManager, websocketManager: websocketManager)
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let resolver = DIResolver(networkController: self.networkProvider, accountManager: self.accountManager, webSocketManager: self.websocketManager)
+        let resolver = DIResolver(networkController: self.networkProvider, accountManager: self.accountManager, webSocketManager: websocketManager)
         if self.accountManager.getBearerToken().isEmpty {
             self.window?.rootViewController = resolver.presentAuthorizationViewController()
         } else {
@@ -42,16 +43,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         self.window?.makeKeyAndVisible()
 
-        self.websocketManager.connect()
+        websocketManager.connect()
 
         return true
     }
 }
 
 extension AppDelegate {
-    func applicationWillResignActive(_ application: UIApplication) { }
-    func applicationDidEnterBackground(_ application: UIApplication) { }
-    func applicationWillEnterForeground(_ application: UIApplication) { }
-    func applicationDidBecomeActive(_ application: UIApplication) { }
-    func applicationWillTerminate(_ application: UIApplication) { }
+    func applicationWillResignActive(_ application: UIApplication) {
+        websocketManager.disconnect()
+    }
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        websocketManager.disconnect()
+    }
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        websocketManager.connect()
+    }
+    func applicationDidBecomeActive(_ application: UIApplication) {}
+    func applicationWillTerminate(_ application: UIApplication) {
+        websocketManager.disconnect()
+    }
 }

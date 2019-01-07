@@ -61,11 +61,18 @@ extension ChatPresenter: WebSocketEventsDelegate {
             banner.show()
         }
     }
+    
+    func typing(from user: CHATModelUser.Payload, to roomId: String, isTyping: Bool) {
+        if roomId == self.room.id, self.accountManager.getUserId() != user.id {
+            self.view?.updateTypingLabel(with: self.room.name, subtitle: (isTyping ? "typing..." : ""))
+        }
+    }
 }
 
 extension ChatPresenter: ChatPresenterProtocol {
 
     func viewDidLoad() {
+        self.view?.updateTypingLabel(with: self.room.name, subtitle: "")
         self.wsManager.connect()
         self.wsManager.eventDelegate = self
     }

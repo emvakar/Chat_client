@@ -139,7 +139,20 @@ class ChatViewController: MessagesViewController {
     }
 }
 
-extension ChatViewController: ChatViewProtocol { }
+// MARK: - ChatViewProtocol
+extension ChatViewController: ChatViewProtocol {
+    func updateTypingLabel(with title: String, subtitle: String) {
+        self.updateTitleView(title: title, subtitle: subtitle)
+    }
+}
+
+//MARK: - Private
+extension ChatViewController {
+    private func updateTitleView(title: String, subtitle: String?) {
+        let isEmpty = subtitle?.isEmpty ?? true
+        self.title = isEmpty ? title : subtitle ?? title
+    }
+}
 
 extension ChatViewController: MessagesDataSource {
 

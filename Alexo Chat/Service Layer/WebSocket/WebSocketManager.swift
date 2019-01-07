@@ -11,6 +11,12 @@ import Starscream
 
 protocol WebSocketEventsDelegate: class {
     func newMessage(payload: MessagePayload)
+    func typing(from user: CHATModelUser.Payload, to roomId: String, isTyping: Bool)
+}
+extension WebSocketEventsDelegate {
+    func typing(from user: CHATModelUser.Payload, to roomId: String, isTyping: Bool) {
+        print("not implemented")
+    }
 }
 
 class WebSocketManager {
@@ -146,6 +152,8 @@ extension WebSocketManager: WebSocketDelegate {
                 print(event)
             case .typing:
                 let event = try decoder.decode(WSEvent<TypingPayload>.self, from: data)
+                guard let payload = event.payload, let user = payload.user else { break }
+                self.eventDelegate?.typing(from: user, to: payload.roomId, isTyping: (payload.action == .started))
                 print(event)
             }
         } catch {
