@@ -19,9 +19,11 @@ extension DIResolver: RoomListProtocol {
         let interactor = RoomListInteractor(networkController: self.networkController)
         let wireFrame = RoomListWireFrame(resolver: self)
         let presenter = RoomListPresenter(view: viewController, wireFrame: wireFrame, interactor: interactor)
+
         presenter.accountManager = self.accountManager
         presenter.wsManager = self.webSocketManager
         viewController.presenter = presenter
+
         return viewController
     }
 }

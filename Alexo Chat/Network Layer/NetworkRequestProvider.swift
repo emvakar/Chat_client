@@ -46,17 +46,18 @@ class NetworkRequestProvider: NetworkRequestProviderProtocol, NetworkMessangerRe
             switch error.type {
             case .unauthorized:
                 ///----------------TO-DO: нужен ли нам в реквесте параметр authorized???
-                if let tokenRefresher = s.tokenRefresher {
-                    tokenRefresher.refreshAuthToken(completion: { (error) in
-                        if let error = error {
-                            completion(statusCode, data, error)
-                            return
-                        }
-
-                        s.networkWrapper.runRequest(request, baseURL: baseUrl, authToken: tokenString, bearerToken: bearerToken, progressResult: progressResult, completion: completion)
-                    })
-                    return
-                }
+                completion(statusCode, data, error)
+//                if let tokenRefresher = s.tokenRefresher {
+//                    tokenRefresher.refreshAuthToken(completion: { (error) in
+//                        if let error = error {
+//                            completion(statusCode, data, error)
+//                            return
+//                        }
+//
+//                        s.networkWrapper.runRequest(request, baseURL: baseUrl, authToken: tokenString, bearerToken: bearerToken, progressResult: progressResult, completion: completion)
+//                    })
+//                    return
+//                }
             default:
                 completion(statusCode, data, error)
             }

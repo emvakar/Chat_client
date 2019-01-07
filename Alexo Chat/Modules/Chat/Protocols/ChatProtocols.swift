@@ -23,6 +23,7 @@ protocol ChatPresenterProtocol: class {
     func fetchMessages()
     func getSender() -> Sender
     func sendMessage(_ messageText: String)
+    func sendTyping(_ start: Bool)
 }
 
 protocol ChatInteractorProtocol: class {

@@ -37,7 +37,7 @@ extension WebSocketManager {
     /// Websocket url
     func getBaseUrl() -> String {
         switch environmet {
-        case .develop: return "ws://127.0.0.1:8080/ws"
+        case .develop: return "ws://192.168.100.2:8080/ws"
         case .production: return "ws://127.0.0.1:8080/ws"
         case .local: return "ws://127.0.0.1:8080/ws"
         }
@@ -67,6 +67,7 @@ extension WebSocketManager {
         guard let socket = socket else { return }
         socket.disconnect()
     }
+
 }
 
 // MARK: - Private
@@ -74,6 +75,22 @@ extension WebSocketManager {
     private func getBearerToken() -> String? {
         return UserDefaults.standard.string(forKey: DefaultsKeys.bearer_token)
     }
+}
+
+extension WebSocketManager {
+
+    func sendTyping(roomId: String, action: OutgoingTypingPayload.Action) {
+        guard let socket = self.socket, socket.isConnected else { return }
+        let typingEvent = OutgoingTypingPayload(roomId: roomId, action: action)
+        let wsEvent = WSEvent(event: WSEventType.typing.rawValue, payload: typingEvent)
+        do {
+            let jsonData = try JSONEncoder().encode(wsEvent)
+            socket.write(data: jsonData)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
 }
 
 extension WebSocketManager: WebSocketDelegate {

@@ -214,8 +214,6 @@ extension ChatViewController: MessageInputBarDelegate {
 
             if let str = component as? String {
                 self.presenter.sendMessage(str)
-//                let message = MessageModel(text: str, sender: currentSender(), messageId: UUID().uuidString, date: Date())
-//                insertMessage(message)
             } else if let img = component as? UIImage {
                 let message = MessageModel(image: img, sender: currentSender(), messageId: UUID().uuidString, date: Date())
                 insertMessage(message)
@@ -224,7 +222,10 @@ extension ChatViewController: MessageInputBarDelegate {
         }
 
         inputBar.inputTextView.text = String()
-        messagesCollectionView.scrollToBottom(animated: true)
+        self.messagesCollectionView.scrollToBottom(animated: true)
     }
 
+    func messageInputBar(_ inputBar: MessageInputBar, textViewTextDidChangeTo text: String) {
+        self.presenter.sendTyping(!text.isEmpty)
+    }
 }

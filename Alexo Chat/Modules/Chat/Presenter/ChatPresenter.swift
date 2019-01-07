@@ -19,6 +19,8 @@ class ChatPresenter: BasePresenter {
     private let room: CHATModelRoom
     private var offset: Int = 0
     private var limit: Int = 20
+    private var typingBuffer: TypingBuffer = TypingBuffer.init(queue: DispatchQueue.main, delay: 2)
+    private var isTyping: Bool = false
 
     init(view: ChatViewProtocol, wireFrame: ChatWireFrameProtocol, interactor: ChatInteractorProtocol, accountManager: AccountManager, wsManager: WebSocketManager, room: CHATModelRoom) {
         self.view = view
@@ -36,11 +38,11 @@ extension ChatPresenter: WebSocketEventsDelegate {
         case .group:
             if payload.room.id == self.room.id {
                 self.interactor.fetchMessages(roomId: payload.room.id, offset: 0, limit: 1) { (apiModels, error) in
-                    
+
                     if let error = error {
                         print(error) // FIXME: - обработать ошибку
                     }
-                    
+
                     if let apiModels = apiModels?.sorted(by: { $0.createdAt < $1.createdAt }) {
                         apiModels.forEach {
                             let model = CHATModelMessage(from: $0).convert()
@@ -101,6 +103,21 @@ extension ChatPresenter: ChatPresenterProtocol {
             if error != nil {
                 print("handle Error")
             }
+        }
+    }
+
+    func sendTyping(_ start: Bool) {
+        if start {
+            if !isTyping {
+                self.isTyping = true
+                self.interactor.startTyping(roomId: self.room.id)
+            }
+            typingBuffer.typing(typing: start) { (_) in
+                self.interactor.stopTyping(roomId: self.room.id)
+                self.isTyping = false
+            }
+        } else {
+            self.interactor.stopTyping(roomId: self.room.id)
         }
     }
 }

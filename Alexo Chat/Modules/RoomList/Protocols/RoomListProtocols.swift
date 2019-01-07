@@ -23,8 +23,6 @@ protocol RoomListViewProtocol: class {
     //working with items
     func updateItems(_ models: [CHATModelRoom])
 
-    func showRoomListAlert()
-
     func setCreateRoomButton()
 
     func showHUD(_ message: String)
@@ -40,8 +38,6 @@ protocol RoomListWireFrameProtocol: class {
 protocol RoomListPresenterProtocol: class {
     func viewDidAppear()
     func viewDidLoad()
-    func registerUser(email: String, password: String, nickname: String)
-    func loginUser(email: String, password: String)
 
     func fetchRoomsList(with page: Int)
     func reloadRooms()
@@ -52,8 +48,6 @@ protocol RoomListPresenterProtocol: class {
 }
 
 protocol RoomListInteractorProtocol: class {
-    func registerUser(email: String, password: String, nickname: String, completion: @escaping(Int, CHATModelSignup?, NetworkError?) -> Void)
-    func loginUser(email: String, password: String, completion: @escaping(NetworkError?) -> Void)
 
     func getRoomsList(offset: Int, limit: Int, searchText: String?, completion: @escaping([CHATModelRoom], NetworkError?) -> Void)
     func createRoom(name: String, shared: Bool, completion: @escaping (CHATRoomAPIResponse?, NetworkError?) -> Void)

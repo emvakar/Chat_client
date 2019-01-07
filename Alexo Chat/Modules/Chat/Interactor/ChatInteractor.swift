@@ -26,11 +26,13 @@ extension ChatInteractor: ChatInteractorProtocol {
     func startTyping(roomId: String) {
         print("TYPING - START")
         // FIXME: - Send Typing start
+        self.networkController.websocketManager.sendTyping(roomId: roomId, action: .started)
     }
     
     func stopTyping(roomId: String) {
         print("TYPING - STOP")
         // FIXME: - send typing stop
+        self.networkController.websocketManager.sendTyping(roomId: roomId, action: .ended)
     }
     
     

@@ -10,7 +10,7 @@ import Foundation
 
 public class TypingBuffer: NSObject {
 
-    private var delay = 0.8
+    private var delay = 2.0
 
     private let queue: DispatchQueue
     private var workItem: DispatchWorkItem?

@@ -14,6 +14,7 @@ protocol NetworkRequestWrapperProtocol {
 }
 
 class NetworkRequestWrapper: NetworkRequestWrapperProtocol {
+    
     func runRequest(_ request: NetworkRequest, baseURL: String, authToken: String, bearerToken: String?, progressResult: ((Double) -> Void)?, completion: @escaping (Int, Data?, NetworkError?) -> Void) {
 
         let target = NetworkTarget(request: request, token: authToken, bearerToken: bearerToken, baseURL: baseURL)

@@ -114,6 +114,7 @@ extension RoomListViewController {
 // MARK: - RoomListViewProtocol
 extension RoomListViewController: RoomListViewProtocol {
 
+
     func showBanner(payload: MessagePayload) {
 
         let label = UILabel.makeLabel(size: 13, weight: UIFont.Weight.regular, color: .white)
@@ -162,90 +163,6 @@ extension RoomListViewController: RoomListViewProtocol {
         let status = Status(isLoading: true, description: "Синхронизация...")
         self.show(status: status)
         self.presenter.reloadRooms()
-    }
-
-    func showRoomListAlert() {
-
-        let alert = UIAlertController(title: "Регистрация", message: "Вам нужно зарегистрироваться.", preferredStyle: .alert)
-
-        alert.addTextField { (textField) in
-            textField.tag = 0
-            textField.placeholder = "Email"
-        }
-
-        alert.addTextField { (textField) in
-            textField.tag = 1
-            textField.placeholder = "Password"
-        }
-
-        alert.addTextField { (textField) in
-            textField.tag = 2
-            textField.placeholder = "Nickname"
-        }
-
-        let regAction = UIAlertAction(title: "Signup", style: .default, handler: { [weak alert] (_) in
-            if let tfs = alert?.textFields {
-
-                var em: String?
-                var ps: String?
-                var nn: String?
-
-                tfs.forEach {
-                    if $0.tag == 0 {
-                        em = $0.text
-                    }
-                    if $0.tag == 1 {
-                        ps = $0.text
-                    }
-                    if $0.tag == 2 {
-                        nn = $0.text
-                    }
-                }
-                // FIXME: - убрать потом
-                em = "emvakar@gmail.com"
-                ps = "M8DyyeLnWLV2adNAYUmMB6AzV4F2"
-                nn = "emvakar"
-
-                guard let email = em, let password = ps, let nickname = nn else { return }
-                self.presenter.registerUser(email: email, password: password, nickname: nickname)
-
-            }
-        })
-
-        let logAction = UIAlertAction(title: "Login", style: .default, handler: { [weak alert] (_) in
-            if let tfs = alert?.textFields {
-
-                var em: String?
-                var ps: String?
-                var nn: String?
-
-                tfs.forEach {
-                    if $0.tag == 0 {
-                        em = $0.text
-                    }
-                    if $0.tag == 1 {
-                        ps = $0.text
-                    }
-                    if $0.tag == 2 {
-                        nn = $0.text
-                    }
-                }
-
-                // FIXME: - убрать потом
-                em = "emvakar@gmail.com"
-                ps = "M8DyyeLnWLV2adNAYUmMB6AzV4F2"
-                nn = "emvakar"
-
-                guard let email = em, let password = ps, let nickname = nn else { return }
-                self.presenter.registerUser(email: email, password: password, nickname: nickname)
-
-            }
-        })
-
-        alert.addAction(regAction)
-        alert.addAction(logAction)
-
-        self.present(alert, animated: true, completion: nil)
     }
 
     func showHUD(_ message: String) {

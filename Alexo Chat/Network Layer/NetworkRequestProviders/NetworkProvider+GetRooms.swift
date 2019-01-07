@@ -14,7 +14,7 @@ extension NetworkRequestProvider {
     func getRooms(offset: Int, limit: Int, searchText: String?, completion: @escaping (CHATRoomsAPIResponse?, NetworkError?) -> Void) {
         let request = CHATRoomApiRequest(searchRoomText: searchText, offset: offset, limit: limit)
 
-        self.runRequest(request, progressResult: nil) { (_, data, error) in
+        self.runRequest(request, progressResult: nil) { (statusCode, data, error) in
             if let error = error {
                 completion(nil, error)
                 return

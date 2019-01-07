@@ -72,41 +72,13 @@ extension RoomListPresenter: RoomListPresenterProtocol {
 
     func viewDidLoad() {
         if (self.accountManager.getBearerToken().isEmpty) {
-            self.view?.showRoomListAlert()
+//            self.view?.showRoomListAlert()
+            // FIXME: - drop to AuthController
         } else {
             self.reloadRooms()
         }
 
         self.view?.setCreateRoomButton()
-    }
-
-    func registerUser(email: String, password: String, nickname: String) {
-
-        self.interactor.registerUser(email: email, password: password, nickname: nickname) { (statusCode, model, error) in
-            if let error = error {
-                print(error)
-                if statusCode == 500 && (error.detailMessage ?? "").contains("uq:User.email") {
-                    self.loginUser(email: email, password: password)
-                }
-                return
-            }
-
-            if model != nil {
-                self.loginUser(email: email, password: password)
-            }
-        }
-    }
-
-    func loginUser(email: String, password: String) {
-        guard let token = (email + ":" + password).toBase64() else { return }
-        self.accountManager.setUserToken(newToken: token)
-        self.interactor.loginUser(email: email, password: password, completion: { (error) in
-            if let error = error {
-                self.accountManager.setUserToken(newToken: "")
-                return
-            }
-            self.reloadRooms()
-        })
     }
 
     func fetchRoomsList(with page: Int) {
@@ -116,7 +88,10 @@ extension RoomListPresenter: RoomListPresenterProtocol {
         if page == 0 && !self.isRefreshing { self.view?.showTableStatus(Status(isLoading: true)) }
 
         self.interactor.getRoomsList(offset: page * self.limit, limit: self.limit, searchText: self.searchText) { (models, error) in
-            defer { self.isLoading = false; self.isRefreshing = false }
+            defer {
+                self.isLoading = false
+                self.isRefreshing = false
+            }
             if error != nil {
 
                 self.view?.failedLoaded(nil)

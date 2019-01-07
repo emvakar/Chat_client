@@ -153,18 +153,24 @@
 		20D0C65121D39FB300FEEEF8 /* NetworkProvider+InviteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0C64921D39FB300FEEEF8 /* NetworkProvider+InviteUser.swift */; };
 		34B91BD2803780415C69A69A /* Pods_Alexo_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B156BD29197B36F09290DD1C /* Pods_Alexo_Chat.framework */; };
 		43D7C1326127E904A072C1B7 /* Pods_Alexo_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E082812FD7B205C35558F7 /* Pods_Alexo_ChatUITests.framework */; };
-		44374329017A5CB6F058FE30 /* Registration+DIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499B8FCF8A74FEFEB45C6B /* Registration+DIResolver.swift */; };
+		44374329017A5CB6F058FE30 /* RoomList+DIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499B8FCF8A74FEFEB45C6B /* RoomList+DIResolver.swift */; };
 		493375D7C074EE1F7A831A96 /* RoomListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29499C4D7A0A8DB0DD71858 /* RoomListInteractor.swift */; };
 		4F24837F1588BF37AD7B3967 /* Pods_Alexo_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1963D16019D7DD6082FF755F /* Pods_Alexo_ChatTests.framework */; };
+		6956954DC08728B250D0442D /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57955CD73B3F010C30D624 /* AuthorizationViewController.swift */; };
+		6EA8CF8D42742121D7C9635C /* AuthorizationWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86267B3DE3179B94E64ED5F /* AuthorizationWireFrame.swift */; };
 		8204989583250B94C445B510 /* RoomListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF4FA8E14FAB23B2F1153A /* RoomListWireFrame.swift */; };
 		823E54152761A7FA5A693E8A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117F3A631DC3B67485152DF /* ChatViewController.swift */; };
 		84328F641552D9DCF8ADD973 /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB41FCB9B5F2B5BA8AEF0E /* ChatInteractor.swift */; };
 		8FB007EA8F460B8F381A5CBE /* ChatProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D242916A648C7B45530485 /* ChatProtocols.swift */; };
 		92F6D269EB14A0A1DCD3F3DE /* RoomListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A2684AF16F10D051F2117 /* RoomListProtocols.swift */; };
 		969F1FC6DDD5AEEA02A69B93 /* Chat+DIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3F0BE8FFED05ADE95F1A9 /* Chat+DIResolver.swift */; };
+		B3BF8F7E2C254ECCF0E160D5 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF8C6BD0EDB78A25F218B5 /* AuthorizationPresenter.swift */; };
 		B6FFA208DEB803C2E100C8FB /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678ABE9A359A23A71A1E78A0 /* RoomListViewController.swift */; };
+		CC2954B56F5F36ED54ED33E8 /* AuthorizationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EAADF3C373D2DCC2A1B70 /* AuthorizationInteractor.swift */; };
 		D0A77795C4A50DE47A8D63BE /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8395CA5504C1B5848940A88A /* ChatPresenter.swift */; };
 		D493B5320B574C28224BB631 /* RoomListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E80106D833B762D816435 /* RoomListPresenter.swift */; };
+		F631345C16947F5ECB3290BE /* AuthorizationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C624579FD49A88962E595B2 /* AuthorizationProtocols.swift */; };
+		FDC487C40E8A0FD8B273C0D6 /* Authorization+DIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC11FF4303DE498FD3DCF5 /* Authorization+DIResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,17 +347,23 @@
 		20D0C64721D39FB300FEEEF8 /* NetworkProvider+LoginUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkProvider+LoginUser.swift"; sourceTree = "<group>"; };
 		20D0C64821D39FB300FEEEF8 /* NetworkProvider+GetRooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkProvider+GetRooms.swift"; sourceTree = "<group>"; };
 		20D0C64921D39FB300FEEEF8 /* NetworkProvider+InviteUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkProvider+InviteUser.swift"; sourceTree = "<group>"; };
+		3ADF8C6BD0EDB78A25F218B5 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		40D03A9CAF56C86694A69898 /* Pods-Alexo ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alexo ChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alexo ChatUITests/Pods-Alexo ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A9E80106D833B762D816435 /* RoomListPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoomListPresenter.swift; sourceTree = "<group>"; };
+		4C624579FD49A88962E595B2 /* AuthorizationProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorizationProtocols.swift; sourceTree = "<group>"; };
+		4D1EAADF3C373D2DCC2A1B70 /* AuthorizationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractor.swift; sourceTree = "<group>"; };
+		56DC11FF4303DE498FD3DCF5 /* Authorization+DIResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Authorization+DIResolver.swift"; sourceTree = "<group>"; };
 		678ABE9A359A23A71A1E78A0 /* RoomListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		7E73407B96A8F4499E04DE9A /* Pods-Alexo ChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alexo ChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alexo ChatTests/Pods-Alexo ChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8395CA5504C1B5848940A88A /* ChatPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 		8AF42869B4406EC76949600E /* Pods-Alexo Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alexo Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alexo Chat/Pods-Alexo Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		9117F3A631DC3B67485152DF /* ChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		95499B8FCF8A74FEFEB45C6B /* Registration+DIResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Registration+DIResolver.swift"; sourceTree = "<group>"; };
+		95499B8FCF8A74FEFEB45C6B /* RoomList+DIResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "RoomList+DIResolver.swift"; sourceTree = "<group>"; };
+		AC57955CD73B3F010C30D624 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		B0E082812FD7B205C35558F7 /* Pods_Alexo_ChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alexo_ChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B156BD29197B36F09290DD1C /* Pods_Alexo_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alexo_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29499C4D7A0A8DB0DD71858 /* RoomListInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoomListInteractor.swift; sourceTree = "<group>"; };
+		B86267B3DE3179B94E64ED5F /* AuthorizationWireFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthorizationWireFrame.swift; sourceTree = "<group>"; };
 		BCAB41FCB9B5F2B5BA8AEF0E /* ChatInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
 		E5DF4FA8E14FAB23B2F1153A /* RoomListWireFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoomListWireFrame.swift; sourceTree = "<group>"; };
 		F0FFEFDECB734DE5C4EC73BC /* Pods-Alexo Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alexo Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alexo Chat/Pods-Alexo Chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -390,6 +402,7 @@
 			children = (
 				33D21557BEF1964D81A42161 /* RoomList */,
 				253D3B0F57D8CD004BD5EFCF /* Chat */,
+				35FEC21985463C03E5ED5316 /* Authorization */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -460,7 +473,8 @@
 			isa = PBXGroup;
 			children = (
 				20D0C27921D2E23B00FEEEF8 /* DIResolver.swift */,
-				95499B8FCF8A74FEFEB45C6B /* Registration+DIResolver.swift */,
+				56DC11FF4303DE498FD3DCF5 /* Authorization+DIResolver.swift */,
+				95499B8FCF8A74FEFEB45C6B /* RoomList+DIResolver.swift */,
 				04E3F0BE8FFED05ADE95F1A9 /* Chat+DIResolver.swift */,
 			);
 			path = Assembly;
@@ -1002,6 +1016,18 @@
 			path = RoomList;
 			sourceTree = "<group>";
 		};
+		35FEC21985463C03E5ED5316 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				744BCD27734A986D3DA00049 /* View */,
+				4D9A7A5AEBD4AD9B687886DE /* Presenter */,
+				A5AED7D871BB2AB2BD9BB68B /* Interactor */,
+				C097242480F67C5EBABC5A67 /* Protocols */,
+				7ED06362CF6713734C3F4C29 /* WireFrame */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		3AC76E58377F4EF07C425F61 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,12 +1057,44 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		4D9A7A5AEBD4AD9B687886DE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3ADF8C6BD0EDB78A25F218B5 /* AuthorizationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		6A0E34918906AA099177C6E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				678ABE9A359A23A71A1E78A0 /* RoomListViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		744BCD27734A986D3DA00049 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC57955CD73B3F010C30D624 /* AuthorizationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7ED06362CF6713734C3F4C29 /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				B86267B3DE3179B94E64ED5F /* AuthorizationWireFrame.swift */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		A5AED7D871BB2AB2BD9BB68B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4D1EAADF3C373D2DCC2A1B70 /* AuthorizationInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		AC8C04B1A2183066B693E089 /* WireFrame */ = {
@@ -1069,6 +1127,14 @@
 				E5DF4FA8E14FAB23B2F1153A /* RoomListWireFrame.swift */,
 			);
 			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		C097242480F67C5EBABC5A67 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4C624579FD49A88962E595B2 /* AuthorizationProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		C2A6970AC79C245C29146F08 /* Frameworks */ = {
@@ -1490,7 +1556,7 @@
 				20D0C43E21D2F01000FEEEF8 /* IKFilterNotificationView.swift in Sources */,
 				20D0C32821D2EE2D00FEEEF8 /* BaseWireFrame.swift in Sources */,
 				20D0C61C21D34C9F00FEEEF8 /* WS+RoomDeleted.swift in Sources */,
-				44374329017A5CB6F058FE30 /* Registration+DIResolver.swift in Sources */,
+				44374329017A5CB6F058FE30 /* RoomList+DIResolver.swift in Sources */,
 				20D0C32921D2EE2D00FEEEF8 /* BaseNavigationControllerPresenter.swift in Sources */,
 				20D0C42F21D2F01000FEEEF8 /* IKArrayExtension.swift in Sources */,
 				20D0C64D21D39FB300FEEEF8 /* NetworkProvider+RegisterUser.swift in Sources */,
@@ -1505,6 +1571,12 @@
 				8FB007EA8F460B8F381A5CBE /* ChatProtocols.swift in Sources */,
 				172A54F528DFF6BE215615A8 /* ChatWireFrame.swift in Sources */,
 				969F1FC6DDD5AEEA02A69B93 /* Chat+DIResolver.swift in Sources */,
+				6956954DC08728B250D0442D /* AuthorizationViewController.swift in Sources */,
+				B3BF8F7E2C254ECCF0E160D5 /* AuthorizationPresenter.swift in Sources */,
+				CC2954B56F5F36ED54ED33E8 /* AuthorizationInteractor.swift in Sources */,
+				F631345C16947F5ECB3290BE /* AuthorizationProtocols.swift in Sources */,
+				6EA8CF8D42742121D7C9635C /* AuthorizationWireFrame.swift in Sources */,
+				FDC487C40E8A0FD8B273C0D6 /* Authorization+DIResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

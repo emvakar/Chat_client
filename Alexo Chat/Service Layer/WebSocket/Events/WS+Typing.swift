@@ -12,3 +12,12 @@ struct TypingPayload: Codable {
     var userId: String
     var text: String
 }
+
+struct OutgoingTypingPayload: Codable {
+    enum Action: String, Codable {
+        case started, ended
+    }
+    
+    var roomId: String
+    var action: Action
+}
